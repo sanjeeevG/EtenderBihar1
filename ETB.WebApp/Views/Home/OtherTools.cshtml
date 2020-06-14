@@ -1,0 +1,19 @@
+﻿@using ETB.WebApp.Utilities
+@{
+    Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
+}
+<h2>@Subtitle.OtherTools</h2>
+<hr />
+<div class="row bg-light">
+    <div class="col-md-12 bg-white  box-shadow mb-3 ">
+        <div class="form-row">
+            <div class="form-group col-md-2 justify-content-center">
+                <a asp-controller="Home" asp-action="SmsSenderTool"><i class="fa fa-sms fa-4x" style="color: #51cf66;"></i><label class="d-none d-sm-inline-block ml-2">Send SMS</label></a>
+            </div>
+
+            <div class="form-group col-md-2 justify-content-center">
+                <a asp-controller="ExtendedContacts" asp-action="Index"><i class="fa fa-file-contract fa-4x" style="color: #51cf66;"></i><label class="d-none d-sm-inline-block ml-2">Extended Contact List</label></a>
+            </div>
+        </div>
+    </div>
+</div>

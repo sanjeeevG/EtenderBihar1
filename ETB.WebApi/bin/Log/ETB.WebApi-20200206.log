@@ -1,0 +1,175 @@
+2020-02-06 12:03:54|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2020-02-06 12:03:55||INFO|HTTP GET /swagger/index.html responded 200 in 1082.3703 ms
+2020-02-06 12:03:55|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-bundle.js
+2020-02-06 12:03:55|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui.css
+2020-02-06 12:03:55|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-standalone-preset.js
+2020-02-06 12:03:56||INFO|HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 300.6733 ms
+2020-02-06 12:03:56||INFO|HTTP GET /swagger/swagger-ui.css responded 200 in 322.0536 ms
+2020-02-06 12:03:56||INFO|HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 437.7369 ms
+2020-02-06 12:03:57|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/v1/swagger.json
+2020-02-06 12:03:57||INFO|HTTP GET /swagger/v1/swagger.json responded 200 in 680.5186 ms
+2020-02-06 12:04:05|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-06 12:04:05|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-06 12:04:05|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-06 12:04:09|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Price' on entity type 'Service'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-06 12:04:09|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'CostOfBOQ' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-06 12:04:09|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EMD' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-06 12:04:09|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EstimatedCost' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-06 12:04:09|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceived' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-06 12:04:09|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceivedDate' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-06 12:04:09|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'OriginalAmt' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-06 12:04:09|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Amount' on entity type 'UserSubscription'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-06 12:04:14|Microsoft.EntityFrameworkCore.Database.Command|EROR|Failed executing DbCommand (518ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [x].[Id], [x].[BankCertificate], [x].[BidOpeningDate], [x].[BidSubmissionEnDate], [x].[BidSubmissionStDate], [x].[COT], [x].[CostOfBOQ], [x].[CreatedBy], [x].[CreationDate], [x].[Currency], [x].[Department], [x].[DescOfWork], [x].[District], [x].[Division], [x].[DocumentDownloadEdDate], [x].[DocumentDownloadStDate], [x].[EMD], [x].[EMDPayableAt], [x].[EMDPaymentOption], [x].[EstimatedCost], [x].[IsActive], [x].[ModificationDate], [x].[ModifiedBy], [x].[NIT], [x].[Organisation], [x].[ParentTenderId], [x].[PayableAt], [x].[PaymentOption], [x].[PublishOrLive], [x].[Region], [x].[TenderDocument], [x].[TenderRef], [x].[TenderRefSiteAddress], [x].[TenderTitle], [x].[TenderType], [x].[UnEmployedEng], [x].[ValueFactor], [x].[WorkNo], [x].[ePublishDate]
+FROM [Tenders] AS [x]
+WHERE ([x].[IsActive] = 1) AND ([x].[BidSubmissionEnDate] >= GETDATE())
+ORDER BY [x].[Id] DESC
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Tenders'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:cbe38cac-678d-44ce-90e9-ce8bed83e6db
+Error Number:208,State:1,Class:16
+2020-02-06 12:04:15|Microsoft.EntityFrameworkCore.Database.Command|EROR|Failed executing DbCommand (250ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[BankCertificate], [x].[BidOpeningDate], [x].[BidSubmissionEnDate], [x].[BidSubmissionStDate], [x].[COT], [x].[CostOfBOQ], [x].[CreatedBy], [x].[CreationDate], [x].[Currency], [x].[Department], [x].[DescOfWork], [x].[District], [x].[Division], [x].[DocumentDownloadEdDate], [x].[DocumentDownloadStDate], [x].[EMD], [x].[EMDPayableAt], [x].[EMDPaymentOption], [x].[EstimatedCost], [x].[IsActive], [x].[ModificationDate], [x].[ModifiedBy], [x].[NIT], [x].[Organisation], [x].[ParentTenderId], [x].[PayableAt], [x].[PaymentOption], [x].[PublishOrLive], [x].[Region], [x].[TenderDocument], [x].[TenderRef], [x].[TenderRefSiteAddress], [x].[TenderTitle], [x].[TenderType], [x].[UnEmployedEng], [x].[ValueFactor], [x].[WorkNo], [x].[ePublishDate]
+FROM [Tenders] AS [x]
+WHERE [x].[IsActive] = 1
+ORDER BY [x].[Id]
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Tenders'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:95d9b755-f38b-4098-8aff-e2030983c442
+Error Number:208,State:1,Class:16
+2020-02-06 12:04:15|Microsoft.EntityFrameworkCore.Query|EROR|An exception occurred while iterating over the results of a query for context type 'ETB.WebApi.DataAccess.ETBContext'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Tenders'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.AsyncSelectEnumerable`2.AsyncSelectEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:95d9b755-f38b-4098-8aff-e2030983c442
+Error Number:208,State:1,Class:16
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Tenders'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.AsyncSelectEnumerable`2.AsyncSelectEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:95d9b755-f38b-4098-8aff-e2030983c442
+Error Number:208,State:1,Class:16
+2020-02-06 12:04:15|Microsoft.EntityFrameworkCore.Query|EROR|An exception occurred while iterating over the results of a query for context type 'ETB.WebApi.DataAccess.ETBContext'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Tenders'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:cbe38cac-678d-44ce-90e9-ce8bed83e6db
+Error Number:208,State:1,Class:16
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Tenders'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:cbe38cac-678d-44ce-90e9-ce8bed83e6db
+Error Number:208,State:1,Class:16
+2020-02-06 12:04:15|ETB.WebApi.Controllers.TendersController|EROR|Invalid object name 'Tenders'.
+2020-02-06 12:04:15|ETB.WebApi.Controllers.TendersController|EROR|Invalid object name 'Tenders'.
+2020-02-06 12:04:15||INFO|HTTP GET /api/ATenders responded 400 in 10262.626 ms
+2020-02-06 12:04:15||INFO|HTTP GET /api/ATenders responded 400 in 10262.7977 ms
+2020-02-06 12:04:16|Microsoft.EntityFrameworkCore.Database.Command|EROR|Failed executing DbCommand (224ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[Id], [x].[BankCertificate], [x].[BidOpeningDate], [x].[BidSubmissionEnDate], [x].[BidSubmissionStDate], [x].[COT], [x].[CostOfBOQ], [x].[CreatedBy], [x].[CreationDate], [x].[Currency], [x].[Department], [x].[DescOfWork], [x].[District], [x].[Division], [x].[DocumentDownloadEdDate], [x].[DocumentDownloadStDate], [x].[EMD], [x].[EMDPayableAt], [x].[EMDPaymentOption], [x].[EstimatedCost], [x].[IsActive], [x].[ModificationDate], [x].[ModifiedBy], [x].[NIT], [x].[Organisation], [x].[ParentTenderId], [x].[PayableAt], [x].[PaymentOption], [x].[PublishOrLive], [x].[Region], [x].[TenderDocument], [x].[TenderRef], [x].[TenderRefSiteAddress], [x].[TenderTitle], [x].[TenderType], [x].[UnEmployedEng], [x].[ValueFactor], [x].[WorkNo], [x].[ePublishDate]
+FROM [Tenders] AS [x]
+WHERE [x].[IsActive] = 1
+ORDER BY [x].[Id]
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Tenders'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:97c6fad4-76b2-453f-b2b2-dd1494f18587
+Error Number:208,State:1,Class:16
+2020-02-06 12:04:16|Microsoft.EntityFrameworkCore.Query|EROR|An exception occurred while iterating over the results of a query for context type 'ETB.WebApi.DataAccess.ETBContext'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Tenders'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.AsyncSelectEnumerable`2.AsyncSelectEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:97c6fad4-76b2-453f-b2b2-dd1494f18587
+Error Number:208,State:1,Class:16
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Tenders'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.AsyncSelectEnumerable`2.AsyncSelectEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:97c6fad4-76b2-453f-b2b2-dd1494f18587
+Error Number:208,State:1,Class:16
+2020-02-06 12:04:16|ETB.WebApi.Controllers.TendersController|EROR|Invalid object name 'Tenders'.
+2020-02-06 12:04:16||INFO|HTTP GET /api/ATenders responded 400 in 11117.5625 ms

@@ -1,0 +1,381 @@
+﻿@using ETB.Core.Entities
+@using ETB.WebApp.Utilities
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@model ETB.WebApp.Models.UserInfoIndexViewModel
+@{
+    Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
+}
+<div class="row">
+    <h2 class="col-md-10">@Subtitle.UserList</h2>
+    <div class="col-md-2 do-not-print">
+        <a asp-action="Index2" asp-controller="Tenders" class="form-control d-inline btn-link">Back to Tender Dashboard</a>
+    </div>
+</div>
+<hr style="margin-bottom:0px;" />
+<div class="navbar-nav col-lg-12 d-flex do-not-print" style="border:0px solid gray;">
+    @await Html.PartialAsync("_UserAdminBand")
+</div>
+<div class="container-fluid" style="padding-left:0px;padding-right:0px;">
+    <input type="hidden" id="SelUserId" class="form-control" />
+    <div class="row do-not-print">
+        <div class="form-group col-lg-2 focus">
+            <label class="control-label">Is Updated?</label>
+            <select id="IsUpdated" class="form-control dropdown" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.IsRecordUpdated>()">
+                <option selected="selected" value="">-Select-</option>
+            </select>
+        </div>
+        <div class="form-group col-lg-2 focus">
+            <label class="control-label">Full Name</label>
+            <input type="text" id="FullName" class="form-control" />
+        </div>
+        <div class="form-group col-lg-2 focus">
+            <label class="control-label">Contact 1</label>
+            <input type="text" id="ContactNo1" class="form-control" />
+        </div>
+        <div class="form-group col-lg-2 focus">
+            <label class="control-label">City</label>
+            <input type="text" id="City" class="form-control" />
+        </div>
+        <div class="form-group col-lg-2">
+            <label class="control-label">Districts</label>
+            <select id="District" class="form-control dropdown" asp-items="Model.Districts">
+                <option selected="selected" value="">-Select-</option>
+            </select>
+        </div>
+        <div class="form-group col-lg-2 focus">
+            <label class="control-label">Modif. Date</label>
+            <input type="text" id="ModificationDate" class="form-control" asp-format="{0:dd-MM-yyyy}" placeholder="dd-mm-yyyy" />
+        </div>
+    </div>
+    <div class="row justify-content-between  mb-2">
+        <div class="form-inline justify-content-start mr-2" style="margin-left:0px;">
+            <div class="d-inline pl-2 pb-2">
+                <label class="d-inline control-label"><span class="d-inline-block d-sm-none mr-1">T. Recs:</span><span class="d-none d-sm-inline-block mr-1">Total Records:</span></label>
+                <label class="d-inline control-label" id="lblTotalRecs"></label>
+                <label class="d-inline control-label"> | </label>
+            </div>
+            <div class="d-inline pl-2 pr-2 pb-2">
+                <label class="d-inline control-label"><span class="d-inline-block d-sm-none mr-1">T. Filt. Recs:</span><span class="d-none d-sm-inline-block mr-1">Total Filtered Records:</span></label>
+                <label class="d-inline control-label" id="lblTotalCounts"></label>
+                <label class="d-inline control-label"> | </label>
+            </div>
+            <div class="d-inline form-group row pl-3 pr-2 do-not-print">
+                <label class="d-inline control-label"><span class="d-none d-sm-inline-block mr-1">Rows to Display:</span></label>
+                <select id="selNoOfRows" class="d-inline form-control dropdown" asp-items="Model.NoOfRows"></select>
+            </div>
+        </div>
+
+        <div class="form-inline do-not-print">
+            <button class="btn btn-info mr-2" id="btnGetDeActiveUser" title="Get De-Active User" value="Filter"><i class="fa fa-filter"></i><span class="d-none d-sm-inline-block ml-2">De-Active Users</span></button>
+            <button class="btn btn-info mr-2" id="btnfilter" title="Filter" value="Filter"><i class="fa fa-filter"></i><span class="d-none d-sm-inline-block ml-2">Filter</span></button>
+            <button class="btn btn-secondary mr-2" id="btnClear" title="Clear" value="Filter"><i class="fa fa-sync"></i><span class="d-none d-sm-inline-block ml-2">Clear</span></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" style="padding-right:0px;">
+            @*<input id="hidIdAdmin" type="hidden" value="@IsSubscriber" />*@
+
+            <div style="overflow:auto;" id="jsGrid"></div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    /*.jsgrid{
+        overflow-x: auto !important;
+    }*/
+</style>
+<script type="text/javascript">
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+    }
+    $(document).ready(function () {
+        var selectedRow;
+        function gettoken() {
+            var token = '@Html.AntiForgeryToken()';
+            token = $(token).val();
+            return token;
+        }
+
+        $('#ModificationDate').datepicker({
+            dateFormat: "dd-mm-yy",
+        });
+
+        LoadUsers("");
+        function LoadUsers(filter1) {
+
+            var dateField = function (config) {
+                jsGrid.Field.call(this, config);
+            };
+            var dateField2 = function (config) {
+                jsGrid.Field.call(this, config);
+            };
+
+            var numField = function (config) {
+                jsGrid.Field.call(this, config);
+            };
+
+            numField.prototype = new jsGrid.Field({
+                itemTemplate: function (value) {
+                    var val1 = value.toFixed(2);
+                    return addCommas(val1);
+                }
+            });
+
+            dateField2.prototype = new jsGrid.Field({
+                itemTemplate: function (value) {
+                    return moment(value).format("DD-MMM-YYYY");
+                }
+            });
+
+            dateField.prototype = new jsGrid.Field({
+                itemTemplate: function (value) {
+                    return moment(value).format("YYYY-MM-DD hh:mm");
+                }
+            });
+
+            jsGrid.fields.dob = dateField2;
+            jsGrid.fields.modidate = dateField;
+
+            $("#jsGrid").jsGrid({
+                height: "750px",
+                width:"100%",
+                loadIndication: true,
+                loadIndicationDelay: 5,
+                loadShading: true,
+                loadMessage: "Please wait, Loading...",
+                noDataContent: "",
+                selecting: true,
+                paging: true,
+                filtering: false,
+                pageSize: 15,
+                autoload: true,
+                rowClass: function (item, itemindex) { return "bg-light"; },
+                controller: {
+                    loadData: function (filter) {
+                        var d = $.Deferred();
+                        $.ajax({
+                            url: '@Url.Action("GetUserDetails", "UserInfo")',
+                            dataType: "json",
+                            data: filter1,
+                            contentType: "application/json; charset=utf-8",
+                        }).done(function (result) {
+                            d.resolve(result.datas);
+                            $('#lblTotalRecs').text(result.tcount);
+                            $('#lblTotalCounts').text(result.rcount);
+                        });
+                        return d.promise();
+                    }
+                },
+                fields: [{ name: "id", title: "Id", width: "20", visible: true },
+                    {
+                        type: "control",
+                        modeSwitchButton: false,
+                        editButton: false,
+                        width: 25,
+                        align: "center",
+                        css:"do-not-print",
+                        itemTemplate: function (index, value) {
+                            var url = '@Url.Action("View", "UserInfo")' + `/${value.id}`
+                            return $("<a>").attr("class", "fa fa-eye").attr("data-toggle", "tooltip").attr("title", `Click to view tender [${value.id}]`).attr("alt", "View").attr("href", url);
+                        },
+                        headerTemplate: function (index, value) {
+                            return "<span class='d-block d-sm-none'>V</span><span class='d-none d-sm-block'>View</span>";
+                        }
+                    },
+
+                    {
+                        type: "control",
+                        modeSwitchButton: false,
+                        editButton: false,
+                        width: 25,
+                        align: "center",
+                        css: "do-not-print",
+                        visible: !$('#hidIdAdmin').val(),
+                        itemTemplate: function (index, value) {
+                            var url = '@Url.Action("UserDetailById", "UserInfo")' + `/${value.id}`
+                            return $("<a>").attr("class", "fa fa-edit").attr("data-toggle", "tooltip").attr("title", `Edit Tender Id [${value.id}]`).attr("alt", "Edit").attr("href", url);
+                        },
+                        headerTemplate: function (index, value) {
+                            return "<span class='d-block d-sm-none'>E</span><span class='d-none d-sm-block'>Edit</span>";
+                        }
+                    },
+                    {
+                        type: "Text",
+                        width: "25",
+                        align: "center",
+                        itemTemplate: function (index, value) {
+                            if (value.isActive == undefined || value.isActive == 0)
+                                return "N";
+                            else
+                                return "Y";
+                        },
+                        headerTemplate: function () {
+                            return "<span class='d-block d-sm-none'>A</span><span class='d-none d-sm-block'>Ac?</span>";
+                        }
+                    },
+                    {
+                        type: "Text",
+                        width: "25",
+                        align: "center",
+                        itemTemplate: function (index, value) {
+                            if (value.isDetailUpdated == undefined || value.isDetailUpdated == 0)
+                                return "N";
+                            else
+                                return "Y";
+                        },
+                        headerTemplate: function () {
+                            return "<span class='d-block d-sm-none'>U</span><span class='d-none d-sm-block'>Up?</span>";
+                        }
+                    },
+                    { name: "fullName", title: "Name", width:150,visible: true },
+                    { name: "dob", type: "dob", title: "Dob", width: 100, visible: true },
+                    { name: "contactNo1", title: "Contact 1", width: 100, visible: true },
+                    { name: "email1", title: "Email 1", width: 200, visible: true },
+                    { name: "city", title: "City", visible: true },
+                    { name: "district", title: "District", visible: true },
+                    { name: "panNo", title: "Pan No", visible: true },
+                    { name: "modifiedBy", title: "Modi. By", width: 200, visible: true },
+                    { name: "modificationDate", type: "modidate", width: 150, title: "Modi. Date", visible: true },
+                ],
+                rowClick: function (args) {
+                    var id = args.item.id;
+                    var name = args.item.fullName;
+
+                    $('#SelUserId').val(id);
+                    var url = '@Url.Action("ChangeUsersPassword", "UserInfo")' + `?id=${id}`
+                    var urlSer = '@Url.Action("AddUserSubscription", "UserInfo")' + `?id=${id}&name=${name}`
+                    if ($('#btnChangePass').length) {
+                        $('#btnChangePass').removeAttr("href");
+                        $('#btnChangePass').attr("href", url);
+                    }
+
+                    if ($('#btnChangeUserSer').length) {
+                        $('#btnChangeUserSer').removeAttr("href");
+                        $('#btnChangeUserSer').attr("href", urlSer);
+                    }
+                    rowHighlight(args.item)
+                }
+
+            });
+        }
+
+        function rowHighlight(item) {
+            if (selectedRow) { selectedRow.children('.jsgrid-cell').css('background-color', ''); }
+            var $row = $("#jsGrid").jsGrid("rowByItem", item);
+            $row.children('.jsgrid-cell').css('background-color', '#F7B64B');
+            selectedRow = $row;
+        }
+
+        $('#btnDeactivate').click(function () {
+            if (confirm(`Are you sure you want to deactivate User Id [${$('#SelUserId').val()}]`) == true) {
+                $.ajax({
+                    url: '@Url.Action("DeActivateUser", "UserInfo")',
+                    credentials: 'include',
+                    dataType: "json",
+                    type:'POST',
+                    data: { __RequestVerificationToken: gettoken(), id: $('#SelUserId').val() },
+                    contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                }).done(function (result) {
+                    console.log(result);
+                    LoadUsers("");
+                });
+            }
+        });
+
+        $('#btnActivate').click(function () {
+            if (confirm(`Are you sure you want to re-activate User Id [${$('#SelUserId').val()}]`) == true) {
+                $.ajax({
+                    url: '@Url.Action("ActivateUser", "UserInfo")',
+                    credentials: 'include',
+                    dataType: "json",
+                    type: 'POST',
+                    data: { __RequestVerificationToken: gettoken(), id: $('#SelUserId').val() },
+                    contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                }).done(function (result) {
+                    LoadUsers("");
+                });
+            }
+        });
+
+        $('#btnDelete').click(function () {
+            if ($('#SelUserId').val() == "") {
+                alert("Please select an user first to proceed.");
+                return false;
+            }
+            if (confirm(`Are you sure you want to Delete User associtated with detail Id [${$('#SelUserId').val()}]?`) == true) {
+                if (confirm("Are you sure again?") == true) {
+
+                    $.ajax({
+                        url: '@Url.Action("DeleteUser", "UserInfo")',
+                        credentials: 'include',
+                        dataType: "json",
+                        type: 'POST',
+                        data: { __RequestVerificationToken: gettoken(), id: $('#SelUserId').val() },
+                        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                    }).done(function (result) {
+                        LoadUsers("");
+                    });
+                }
+            }
+        });
+
+
+
+
+        $('#selNoOfRows').on('change', function (event) {
+            $("#jsGrid").jsGrid("option", "pageSize", $(this).val());
+        });
+
+        function getFilterObj() {
+            return {
+                IsActive: "Y",
+                IsUpdated: $('#IsUpdated').val(),
+                FullName: $('#FullName').val(),
+                ContactNo1: $('#ContactNo1').val(),
+                City: $('#City').val(),
+                District: $('#District').val(),
+                ModificationDate: $('#ModificationDate').val(),
+                Districts: {},
+                NoOfRows: {}
+            };
+        }
+
+        function getEmptyFilterObj() {
+            return {
+                IsActive: "N",
+                IsUpdated: "",
+                FullName: "",
+                ContactNo1: "",
+                City: "",
+                District: "",
+                ModificationDate: "",
+                Districts: {},
+                NoOfRows: {}
+            };
+        }
+
+        $('#btnGetDeActiveUser').click(function () {
+            var filter = getEmptyFilterObj();
+            LoadUsers(filter);
+        });
+
+        $('#btnfilter').click(function () {
+            var filter = getFilterObj();
+            LoadUsers(filter);
+        });
+
+        $('#btnClear').click(function () {
+            $('#IsUpdated').val("");
+            $('#FullName').val("");
+            $('#ContactNo1').val("");
+            $('#City').val("");
+            $('#District').val("");
+            $('#ModificationDate').val("");
+            var filter = getFilterObj();
+            LoadUsers(filter);
+        });
+
+        });
+</script>

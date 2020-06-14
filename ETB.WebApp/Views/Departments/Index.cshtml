@@ -1,0 +1,130 @@
+﻿@using ETB.WebApp.Utilities
+@model ETB.WebApp.Models.DeptViewModel
+@{
+    Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
+}
+
+<div class="form-row">
+    <div class="col-lg-7">
+        <h2>@Subtitle.DepartmentList</h2>
+    </div>
+    <div class="col-lg-5">
+        <a asp-action="Index2" asp-controller="Tenders" class="form-control d-inline btn-link">Back to Tender Dashboard</a>
+    </div>
+</div>
+<hr />
+<div class="form-row">
+    <div class="col-lg-7">
+        <div class="form-group row pl-3 pr-2">
+            <button class="btn btn-dark" id="btnDelete"><i class="fa fa-times"></i><span class="d-none d-sm-inline-block ml-2">Delete Selected Departments</span></button>
+            <button id="btnCreate" class="btn btn-primary d-inline ml-2"><i class="fa fa-plus"></i><span class="d-none d-sm-inline-block ml-2" data-toggle="modal" data-target="#deptModalCenter">Add New Departments</span></button>
+        </div>
+    </div>
+    <div class="col-lg-7">
+        <input type="hidden" id="selDeptId" />
+        <div class="form-inline justify-content-start mr-2 mb-2" style="margin-left:0px;">
+            <div class="d-inline pl-2 pb-2">
+                <label class="d-inline control-label"><span class="d-inline-block d-sm-none mr-1">Total Recs:</span><span class="d-none d-sm-inline-block mr-1">Total Records:</span></label>
+                <label class="d-inline control-label" id="lblTotalRecs"></label>
+                <label class="d-inline control-label"> | </label>
+            </div>
+            <div class="d-inline form-group row pl-3 pr-2">
+                <label class="d-inline control-label"><span class="d-none d-sm-inline-block mr-1">Rows to Display:</span></label>
+                <select id="selNoOfRows" class="d-inline form-control dropdown" asp-items="Model.NoOfRows"></select>
+            </div>
+        </div>
+        <div id="jsGrid"></div>
+    </div>
+    @await Html.PartialAsync("_ModelDept", new DeptViewModel { States = Model.States, SelState = Model.SelState, Department1 = Model.Department1 })
+</div>
+
+<script type="text/javascript">
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+    }
+    $(document).ready(function () {
+        var selectedRow;
+        function gettoken() {
+            var token = '@Html.AntiForgeryToken()';
+            token = $(token).val();
+            return token;
+        }
+        LoadList();
+        function LoadList() {
+             $("#jsGrid").jsGrid({
+                height: "500px",
+                width:"100%",
+                loadIndication: true,
+                loadIndicationDelay: 5,
+                loadShading: true,
+                loadMessage: "Please wait, Loading...",
+                selecting: true,
+                paging: true,
+                pageSize: 15,
+                rowClass: "rowCss",
+                autoload: true,
+                controller: {
+                    loadData: function () {
+                        var d = $.Deferred();
+                        $.ajax({
+                            url: '@Url.Action("GetDepartments", "Departments")',
+                            dataType: "json",
+                            contentType: "application/json; charset=utf-8",
+                        }).done(function (result) {
+                            $('#lblTotalRecs').text(result.tcount);
+                            d.resolve(result.datas);
+                        });
+                        return d.promise();
+                    }
+                },
+                 fields: [{ name: "id", title: "Id", width: 30, visible: true },
+                     { name: "deptartment", title: "Dept.", visible: true, width: 230 },
+                    { name: "deptBelongsTo", title: "State", visible: true, width: 70 },
+                 ],
+                  rowClick: function (args) {
+                    var id = args.item.id;
+                      $('#selDeptId').val(id);
+                    rowHighlight(args.item)
+                }
+            });
+        }
+
+        function rowHighlight(item) {
+            if (selectedRow) { selectedRow.children('.jsgrid-cell').css('background-color', ''); }
+            var $row = $("#jsGrid").jsGrid("rowByItem", item);
+            $row.children('.jsgrid-cell').css('background-color', '#F7B64B');
+            selectedRow = $row;
+        }
+
+        $('#selNoOfRows').on('change', function (event) {
+            $("#jsGrid").jsGrid("option", "pageSize", $(this).val());
+        });
+
+
+        $('#btnCreate').click(function () {
+            clear();
+        });
+
+        $('#btnDelete').click(function () {
+            if ($('#selDeptId').val() == "") {
+                alert("Please select a Department from department grid.");
+                return false;
+            }
+            if (confirm(`Are you sure you want to Delete Department Id [${$('#selDeptId').val()}]?`) == true) {
+                if (confirm("Are you sure again?") == true) {
+
+                    $.ajax({
+                        url: '@Url.Action("DeleteDepartment", "Departments")',
+                        credentials: 'include',
+                        dataType: "json",
+                        type: 'POST',
+                        data: { __RequestVerificationToken: gettoken(), id: $('#selDeptId').val() },
+                        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                    }).done(function (result) {
+                        LoadList();
+                    });
+                }
+            }
+        });
+    });
+</script>

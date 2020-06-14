@@ -1,0 +1,48 @@
+﻿@page {
+    size: A4;
+    margin: 11mm 17mm 17mm 17mm;
+}
+
+@media print {
+    div.do-not-print {
+        display: none !important;
+    }
+
+    th.do-not-print {
+        display: none;
+    }
+    td.do-not-print {
+        display: none;
+    }
+
+    a.do-not-print {
+        display: none;
+    }
+
+    #header {
+        display: table-header-group;
+    }
+
+    .navbar {
+        display: block;
+        border-width: 0 !important;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+    }
+
+    .content-block, p {
+        page-break-inside: avoid;
+    }
+
+    html, body {
+        width: 210mm;
+        height: 297mm;
+    }
+}

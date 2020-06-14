@@ -1,0 +1,156 @@
+﻿<div style="" id="jsGrid"></div>
+@*<div id="myGrid" style="height: 280px;width:100%;" class="ag-theme-fresh"></div>*@
+
+<style>
+    .show-eclipse {
+        white-space: nowrap;
+        overflow: hidden;
+        width: 200px;
+        text-overflow: ellipsis;
+    }
+</style>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#jsGrid").jsGrid("option", "noDataContent", "");
+        function addCommas(nStr) {
+            nStr += '';
+            x = nStr.split('.');
+            x1 = x[0];
+            x2 = x.length > 1 ? '.' + x[1] : '';
+            var rgx = /(\d+)(\d{3})/;
+            while (rgx.test(x1)) {
+                x1 = x1.replace(rgx, '$1' + ',' + '$2');
+            }
+            return x1 + x2;
+        }
+
+        LoadPartialTender();
+        //LoadPartialTender2();
+        function LoadPartialTender2() {
+            var columnDefs = [
+                { headerName: "District", field: "district" },
+                { headerName: "Estimated Cost", field: "estimatedCost" },
+                { headerName: "EMD", field: "emd" },
+                { headerName: "BOQ", field: "costOfBOQ" },
+                { headerName: "Closing Date", field: "bidSubmissionEnDate" },
+                { headerName: "Title", field: "tenderTitle" }
+            ];
+
+            //var autoGroupColumnDef = {
+            //    headerName: "Model",
+            //    field: "model",
+            //    cellRenderer: 'agGroupCellRenderer',
+            //    cellRendererParams: {
+            //        checkbox: true
+            //    }
+            //}
+
+            // let the grid know which columns and what data to use
+            var gridOptions = {
+                columnDefs: columnDefs,
+                rowSelection: 'single'
+            };
+
+            // lookup the container we want the Grid to use
+            var eGridDiv = document.querySelector('#myGrid');
+
+            // create the grid passing in the div to use together with the columns & data we want to use
+            new agGrid.Grid(eGridDiv, gridOptions);
+
+            agGrid.simpleHttpRequest({ url: '@Url.Action("GetTenderPartialData", "Tenders")' }).then(function (data) {
+                console.log('data', data.datas);
+                gridOptions.api.setRowData(data.datas);
+            });
+
+
+        }
+
+
+        function LoadPartialTender() {
+            var dateField = function (config) {
+                jsGrid.Field.call(this, config);
+            };
+
+            var numField = function (config) {
+                jsGrid.Field.call(this, config);
+            };
+
+            dateField.prototype = new jsGrid.Field({
+                sorter: function (date1, date2) {
+                    return new Date(date1) - new Date(date2);
+                },
+
+                itemTemplate: function (value) {
+                    return moment(value).format("DD-MMM-YYYY hh:mm");
+                }
+            });
+
+
+
+            numField.prototype = new jsGrid.Field({
+                itemTemplate: function (value) {
+                    var val1 = value.toFixed(2);
+                    return addCommas(val1);
+                }
+            });
+
+            jsGrid.fields.ClosingDate = dateField;
+            jsGrid.fields.ECFormat = numField;
+            jsGrid.fields.emdFormat = numField;
+            jsGrid.fields.BOQFormat = numField;
+
+            $("#jsGrid").jsGrid({
+                height: "280px",
+                width:"100%",
+                loadIndication: true,
+                loadIndicationDelay: 5,
+                loadShading: true,
+                loadMessage: "Please wait, Loading...",
+                noDataContent: "",
+                selecting: true,
+                paging: false,
+                rowCSS: "",
+                pageSize: 4,
+                autoload: true,
+                controller: {
+                    loadData: function () {
+                        var d = $.Deferred();
+                        $.ajax({
+                            url: '@Url.Action("GetTenderPartialData", "Tenders")',
+                            dataType: "json",
+                            contentType: "application/json; charset=utf-8",
+                        }).done(function (result) {
+                            d.resolve(result.datas);
+                        });
+                        return d.promise();
+                    }
+                },
+                //fields: [{ name: "Id", title: "Id", visible: false },
+                //    { name: "district", title: "District", visible: true, width: 40 },
+                //    { name: "estimatedCost", align: "right", type: "ECFormat", title: "Estimated Cost", visible: true, width: 40 },
+                //    { name: "emd", type: "emdFormat", align: "right", title: "EMD", visible: true, width: 40 },
+                //    { name: "costOfBOQ", type: "BOQFormat", align: "right", title: "BOQ", visible: true, width: 40 },
+                //    { name: "bidSubmissionEnDate", type: "ClosingDate", title: "Closing Date", visible: true, width: 50 },
+                //    { name: "tenderTitle", title: "Title", visible: true },
+                //]
+                fields: [{ name: "Id", title: "Id", visible: false, width: 40},
+                    { name: "district", title: "District", visible: true, width: 100 },
+                    { name: "department", css: "show-eclipse", title: "Dept.", visible: true, width: 150 },
+                    { name: "estimatedCost", align: "right", type: "ECFormat", title: "Estimated Cost", visible: true, width: 100},
+                    { name: "emd", type: "emdFormat", align: "right", title: "EMD", visible: true, width: 100},
+                    { name: "costOfBOQ", type: "BOQFormat", align: "right", title: "BOQ", visible: true, width: 100},
+                    { name: "bidSubmissionEnDate", type: "ClosingDate", title: "Closing Date", visible: true,width: 100},
+                    { name: "tenderTitle", css:"show-eclipse", title: "Title", visible: true, width:150 },
+                ]
+            });
+        }
+    });
+</script>
+<style>
+    .jsgrid-cell {
+        padding: 0px;
+        padding-left:.5em;
+    }
+</style>

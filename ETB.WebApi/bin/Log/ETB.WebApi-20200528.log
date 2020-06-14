@@ -1,0 +1,10 @@
+2020-05-28 16:57:26|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2020-05-28 16:57:27||INFO|HTTP GET /swagger/index.html responded 200 in 874.5559 ms
+2020-05-28 16:57:28|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui.css
+2020-05-28 16:57:28|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-standalone-preset.js
+2020-05-28 16:57:28|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-bundle.js
+2020-05-28 16:57:28||INFO|HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 200.2944 ms
+2020-05-28 16:57:28||INFO|HTTP GET /swagger/swagger-ui.css responded 200 in 241.4408 ms
+2020-05-28 16:57:28||INFO|HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 217.5228 ms
+2020-05-28 16:57:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/v1/swagger.json
+2020-05-28 16:57:29||INFO|HTTP GET /swagger/v1/swagger.json responded 200 in 479.6573 ms

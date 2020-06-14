@@ -1,0 +1,240 @@
+﻿@using ETB.WebApp.Utilities
+@model ETB.WebApp.Models.UserSubscriptionViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
+}
+
+<div class="form-row">
+    <h3 class="col-md-8">@Subtitle.UserSubscription</h3>
+    <div class="col-md-4">
+        <a asp-action="Index" asp-controller="UserInfo" class="form-control d-inline btn-link">Back to User List</a>
+        <a asp-action="Index2" asp-controller="Tenders" class="form-control d-inline btn-link">Back to Tender Dashboard</a>
+    </div>
+</div>
+<hr />
+<form asp-action="AddUserSubscription" asp-controller="UserInfo" method="post">
+    <div class="row" >
+        <div class="col-md-12 bg-light">
+            <div class="font-weight-bold glyphicon-text-color">
+                <label class="control-label">User Id:</label>
+                <label class="control-label">@Model.UserId</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" class="form-control" />
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label asp-for="UserDetailId" class="control-label"></label>
+                    <input asp-for="UserDetailId" readonly="readonly" class="form-control" />
+                    <span asp-validation-for="UserDetailId" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-9">
+                    <label asp-for="FullName" class="control-label"></label>
+                    <input asp-for="FullName" class="form-control" readonly="readonly" />
+
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label asp-for="ServiceId" class="control-label"></label>
+                    <input asp-for="ServiceId" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="ServiceId" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-9">
+                    <label asp-for="ServiceName" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="ServiceName" asp-items="Model.Services">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="ServiceName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label asp-for="StartDate" class="control-label"></label>
+                    <input asp-for="StartDate" class="form-control" readonly="readonly" type="date" />
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="EndDate" class="control-label"></label>
+                    <input asp-for="EndDate" class="form-control" readonly="readonly" type="date" />
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="ExtendedEndDate" class="control-label"></label>
+                    <input asp-for="ExtendedEndDate" class="form-control" type="date" />
+                    <span asp-validation-for="ExtendedEndDate" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-row">
+                <input type="hidden" class="form-check-input" asp-for="IsPaid" />
+                <div class="form-group col-md-6">
+                    <label asp-for="PayingMethod" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="PayingMethod" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.PayingMethod>()">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="PayingMethod" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Amount" class="control-label"></label>
+                    <input asp-for="Amount" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>Existing Subscriptions</h4>
+            <hr />
+            <div>
+                <div class="d-inline pl-2 pb-2">
+                    <label class="d-inline control-label"><span class="d-inline-block d-sm-none mr-1">T. Recs:</span><span class="d-none d-sm-inline-block mr-1">Total Records:</span></label>
+                    <label class="d-inline control-label" id="lblTotalRecs"></label>
+                </div>
+                <div id="jsGrid"></div>
+            </div>
+
+        </div>
+        <div class="form-inline col-md-12">
+            <input type="submit" value="Save Subscription" class="btn btn-primary mr-2" />
+            <a asp-action="Index" class="form-control d-inline btn-link">Back to List</a>
+        </div>
+
+    </div>
+</form>
+
+<script type="text/javascript">
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+    }
+    $(document).ready(function () {
+        function gettoken() {
+            var token = '@Html.AntiForgeryToken()';
+            token = $(token).val();
+            return token;
+        }
+        $("#ServiceName").change(function () {
+            $("#ServiceId").val($('#ServiceName option:selected').val());
+
+            $.ajax({
+                url: '@Url.Action("GetSpService", "Services")' ,
+                credentials: 'include',
+                dataType: "json",
+                type:'POST',
+                data: { __RequestVerificationToken: gettoken(), id: $('#ServiceId').val() },
+                contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                }).done(function (result) {
+                    console.log(moment(result.datas.stDate).format("DD/MM/YYYY"));
+                    $('#StartDate').val(moment(result.datas.stDate).format("YYYY-MM-DD"));
+                    $('#EndDate').val(moment(result.datas.enDate).format("YYYY-MM-DD"));
+                    $('#ExtendedEndDate').val(moment(result.datas.enDate).format("YYYY-MM-DD"));
+                    $('#Amount').val(result.datas.val);
+
+                });
+        });
+
+        function LoadList() {
+            var dateField = function (config) {
+                jsGrid.Field.call(this, config);
+            };
+            var dateField2 = function (config) {
+                jsGrid.Field.call(this, config);
+            };
+
+            var numField = function (config) {
+                jsGrid.Field.call(this, config);
+            };
+
+            numField.prototype = new jsGrid.Field({
+                itemTemplate: function (value) {
+                    var val1 = value.toFixed(2);
+                    return addCommas(val1);
+                }
+            });
+
+
+            dateField2.prototype = new jsGrid.Field({
+                itemTemplate: function (value) {
+                    return moment(value).format("DD-MMM-YYYY");
+                }
+            });
+
+            dateField.prototype = new jsGrid.Field({
+                itemTemplate: function (value) {
+                    return moment(value).format("YYYY-MM-DD hh:mm");
+                }
+            });
+
+            jsGrid.fields.date1 = dateField2;
+            jsGrid.fields.modidate = dateField;
+            jsGrid.fields.amount = numField;
+
+             $("#jsGrid").jsGrid({
+                 height: "500px",
+                 weidth: "auto",
+                loadIndication: true,
+                loadIndicationDelay: 5,
+                loadShading: true,
+                loadMessage: "Please wait, Loading...",
+                selecting: true,
+                paging: true,
+                pageSize: 15,
+                rowClass: "rowCss",
+                autoload: true,
+                controller: {
+                    loadData: function () {
+                        var d = $.Deferred();
+                        $.ajax({
+                            url: '@Url.Action("GetUserExistingSubscriptions", "UserInfo")' + `?userdetailid=${$('#UserDetailId').val()}` ,
+                            dataType: "json",
+                            contentType: "application/json; charset=utf-8",
+                        }).done(function (result) {
+                            $('#lblTotalRecs').text(result.tcount);
+                            d.resolve(result.datas);
+                        });
+                        return d.promise();
+                    }
+                },
+                 fields: [{ name: "id", title: "Id", width: 30, visible: true },
+                     { name: "userDetail.fullName", title: "Name", visible: true, width: 130},
+                     { name: "service.name", title: "Service", visible: true, width: 130},
+                     { name: "startDate", type: "date1", title: "St. Date", visible: true, width: 80 },
+                     { name: "endDate", type: "date1", title: "En. Date", visible: true, width: 80 },
+                     { name: "payingMethod", title: "Pay. Method", visible: true, width: 100 },
+                     { name: "amount", type: "amount", title: "Amount", align:"right", visible: true, width: 120 },
+                     { name: "isActive", title: "Is Active", visible: true, width: 30 },
+                     { name: "creationDate", type: "modidate", title: "Cre. Date", visible: true, width: 130},
+                     { name: "modificationDate", type: "modidate", title: "Modf. Date", visible: true, width: 130},
+                 ],
+                  rowClick: function (args) {
+                    var id = args.item.id;
+                      //$('#selDeptId').val(id);
+                    //rowHighlight(args.item)
+                }
+            });
+
+        }
+
+        LoadList();
+
+
+    });
+    function addCommas(nStr) {
+        nStr += '';
+        x = nStr.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        }
+        return x1 + x2;
+    }
+</script>
+

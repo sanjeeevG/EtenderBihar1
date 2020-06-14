@@ -1,0 +1,54 @@
+﻿@using ETB.WebApp.Utilities
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@model IEnumerable<ETB.Core.Entities.Service>
+@{
+    var uId = @HttpContextAccessor.HttpContext.Session.GetString("UserId");
+    if (uId == null)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
+    }
+}
+
+<h2>@Subtitle.ServiceList</h2>
+<hr />
+<div class="container">
+    <div class="row ">
+        @{
+            foreach (var ser in Model)
+            {
+                <div class="card bg-light mb-3 mr-3" style="max-width: 28rem;">
+                    <div class="card-header">
+                        <h5 class="card-title">@ser.Name</h5>
+                        <p class="card-text">@ser.Description</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            @if (ser.ServiceDetails != null)
+                            {
+                                @foreach (var detail in ser.ServiceDetails)
+                                {
+                                    <li class="list-group-item bg-light">
+                                        @detail.Detail
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-text">@ser.Duration</p>
+                        <p class="card-text font-weight-bolder">&#8377; @ser.Price</p>
+                        @*<a href="#" class="btn btn-primary">Select</a>*@
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <div class="row">
+        <partial name="_BankDetails.cshtml" />
+    </div>
+</div>

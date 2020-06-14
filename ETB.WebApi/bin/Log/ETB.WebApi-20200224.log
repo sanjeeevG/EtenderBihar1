@@ -1,0 +1,26 @@
+2020-02-24 20:28:25|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2020-02-24 20:28:26||INFO|HTTP GET /swagger/index.html responded 200 in 1137.0846 ms
+2020-02-24 20:28:26|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui.css
+2020-02-24 20:28:26|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-bundle.js
+2020-02-24 20:28:26|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-standalone-preset.js
+2020-02-24 20:28:27||INFO|HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 322.541 ms
+2020-02-24 20:28:27||INFO|HTTP GET /swagger/swagger-ui.css responded 200 in 337.0022 ms
+2020-02-24 20:28:27||INFO|HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 333.3666 ms
+2020-02-24 20:28:28|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/v1/swagger.json
+2020-02-24 20:28:28||INFO|HTTP GET /swagger/v1/swagger.json responded 200 in 600.6767 ms
+2020-02-24 20:28:33|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-24 20:28:33|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-24 20:28:33|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-24 20:28:37|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Price' on entity type 'Service'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-24 20:28:37|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'CostOfBOQ' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-24 20:28:37|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EMD' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-24 20:28:37|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EstimatedCost' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-24 20:28:37|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceived' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-24 20:28:37|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceivedDate' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-24 20:28:37|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'OriginalAmt' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-24 20:28:37|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Amount' on entity type 'UserSubscription'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-24 20:28:42||INFO|HTTP GET /api/ATenders responded 200 in 9396.053 ms
+2020-02-24 20:28:44||INFO|HTTP GET /api/ATenders responded 200 in 11454.1496 ms
+2020-02-24 20:28:44|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2020-02-24 20:28:44||INFO|HTTP GET /api/Districts responded 200 in 314.8777 ms
+2020-02-24 20:28:45||INFO|HTTP GET /api/ATenders responded 200 in 12713.1823 ms

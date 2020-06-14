@@ -1,0 +1,34 @@
+﻿<div id="districtListCount" style="height:280px;overflow:auto;">
+    <ul id="districtList" class="list-group"></ul>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $.ajax({
+            url: '@Url.Action("GetDistrictWiseCount", "Tenders")',
+            type: 'get',
+            async: true,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                if (result.status == "Error") {
+                    console.log(result.error);
+                }
+                else {
+                    console.log(result.status);
+                }
+                LoadData(result.datas);
+            },
+            error: function (errorResult) {
+                console.log("error", errorResult.error);
+            }
+        });
+
+        function LoadData(data) {
+            $.each(data, function (index, value) {
+                $("#districtList").append(`<li class='list-group-item'><a>${value.district} (${value.tenderCount})</a></li>`);
+            });
+        }
+    });
+</script>

@@ -1,0 +1,140 @@
+﻿@model ETB.WebApp.Models.DivisionViewModel
+<!-- Modal -->
+<div class="modal fade" id="divisionModalCenter" tabindex="-1" role="dialog" aria-labelledby="divisionModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="divisionModalLongTitle">Add Division</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="formDivision">
+                    <div class="container">
+                        <div class="row">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label class="control-label" asp-for="DV_Department"></label>
+                                    <input asp-for="DV_Department" class="form-control" />
+                                    <span asp-validation-for="DV_Department" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label class="control-label" asp-for="DV_District"></label>
+                                    <select asp-for="DV_District" class="form-control dropdown" asp-items="Model.Districts">
+                                        <option selected="selected" value="">-Select-</option>
+                                    </select>
+                                    <span asp-validation-for="DV_District" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label class="control-label" asp-for="DV_Division"></label>
+                                    <input asp-for="DV_Division" class="form-control" />
+                                    <span asp-validation-for="DV_Division" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center small">
+                                <span class="d-flex justify-content-center" id="spnResultDiv"></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnSaveDV">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#divisionModalCenter').on('show.bs.modal', function () {
+            $('.modal-body').find('input,select').val('').end();
+            $('#spnResultDiv').text('');
+            if ($('#Department').length) {
+                $('#DV_Department').val($('#Department').val());
+                $('#DV_District').val($('#District').val());
+            }
+
+        });
+        $("#DV_Department").autocomplete({
+            maxShowItems: 5,
+            source: function (request, response) {
+                //console.log(request.term);
+                var pref = {
+                    prefix: `${request.term}`,
+                    param1: "",
+                    param2: ""
+                };
+                $.ajax({
+                    url: '@Url.Action("GetAutoCompDept", "Departments")',
+                    data: pref,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        console.log(data);
+                        response($.map(data, function (item) {
+                            console.log(item);
+                            return item;
+                        }))
+                    },
+                    error: function (response) {
+                        console.log(response.responseText);
+                    },
+                    failure: function (response) {
+                        console.log(response.responseText);
+                    }
+                });
+            },
+            select: function (e, i) {
+                console.log(i.item.val);
+            },
+            minLength: 1
+        });
+        $("#DV_Department").autocomplete("option", "appendTo", "#formDivision");
+        $('#btnSaveDV').click(function () {
+            if (!$('#formDivision').valid()) {
+                return false;
+            }
+            var data1 = {
+                Id: 0,
+                Departments: {},
+                Districts: {},
+                DV_Department: $('#DV_Department').val(),
+                DV_District: $('#DV_District').val(),
+                DV_Division: $('#DV_Division').val()
+            };
+
+            console.log(data1);
+            $.ajax({
+                url: '@Url.Action("CreateNewDivision", "Divisions")',
+                data: data1,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    if (result.status == "Error") {
+                        $('#spnResultDiv').removeAttr("class", "text-success");
+                        $('#spnResultDiv').attr("class", "text-danger");
+                        $('#spnResultDiv').text(`Division [${$('#DV_Division').val()}] creation failed.`);
+                    }
+                    else {
+                        console.log(result);
+                        $('#spnResultDiv').removeAttr("class", "text-danger");
+                        $('#spnResultDiv').attr("class", "text-success");
+                        $('#spnResultDiv').text(`Division [${$('#DV_Division').val()}] created successfully.`);
+                        $('#DV_Division').val('');
+                        console.log(typeof LoadDivisionOnDeptChange);
+                        if (typeof LoadDivisionOnDeptChange !== 'undefined' && $.isFunction(LoadDivisionOnDeptChange)) {
+                            LoadDivisionOnDeptChange();
+                        }
+                    }
+                },
+                error: function (errorResult) {
+                    console.log("error", errorResult.error);
+                }
+            });
+        });
+    });
+</script>

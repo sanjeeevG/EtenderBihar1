@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Internal\" />
+    <Folder Include="Attributes\" />
+    <Folder Include="Providers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFrameworkCore.DataEncryption" Version="1.0.1" />
+    <PackageReference Include="Microsoft.Net.Compilers" Version="3.2.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,32 @@
+﻿@{
+    if (TempData["notice"] != null)
+    {
+        var tempStatusResult = (ETB.Core.Entities.StatusResult)TempData.Peek("notice");
+        var status = tempStatusResult.Status;
+        var statusText = tempStatusResult.StatusDetail;
+        if (status == ETB.Core.Entities.StatusText.Successful.ToString())
+        {
+            <script type="text/javascript">
+                toastr.success("@statusText", "@ViewBag.Title");
+            </script>
+        }
+        else if (status == ETB.Core.Entities.StatusText.Error.ToString())
+        {
+            <script type="text/javascript">
+                toastr.error("@statusText", "@ViewBag.Title");
+            </script>
+        }
+        else if (status == ETB.Core.Entities.StatusText.Info.ToString())
+        {
+            <script type="text/javascript">
+                toastr.info("@statusText", "@ViewBag.Title");
+            </script>
+        }
+        else
+        {
+            <script type="text/javascript">
+                toastr.info("@statusText", "@ViewBag.Title");
+            </script>
+        }
+    }
+}

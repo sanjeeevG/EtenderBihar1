@@ -1,0 +1,32 @@
+2020-01-12 18:56:27|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2020-01-12 18:56:29||INFO|HTTP GET /swagger/index.html responded 200 in 2578.841 ms
+2020-01-12 18:56:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-bundle.js
+2020-01-12 18:56:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-standalone-preset.js
+2020-01-12 18:56:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui.css
+2020-01-12 18:56:30||INFO|HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 747.1449 ms
+2020-01-12 18:56:30||INFO|HTTP GET /swagger/swagger-ui.css responded 200 in 753.9385 ms
+2020-01-12 18:56:30||INFO|HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 897.6199 ms
+2020-01-12 18:56:31|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/v1/swagger.json
+2020-01-12 18:56:32||INFO|HTTP GET /swagger/v1/swagger.json responded 200 in 591.2563 ms
+2020-01-12 19:16:23|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2020-01-12 19:16:24||INFO|HTTP GET /swagger/index.html responded 200 in 1137.0161 ms
+2020-01-12 19:16:24|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui.css
+2020-01-12 19:16:24|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-bundle.js
+2020-01-12 19:16:24|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-standalone-preset.js
+2020-01-12 19:16:24||INFO|HTTP GET /swagger/swagger-ui.css responded 200 in 574.6094 ms
+2020-01-12 19:16:24||INFO|HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 527.8847 ms
+2020-01-12 19:16:24||INFO|HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 484.2176 ms
+2020-01-12 19:16:26|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/v1/swagger.json
+2020-01-12 19:16:26||INFO|HTTP GET /swagger/v1/swagger.json responded 200 in 666.9674 ms
+2020-01-12 19:17:36|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2020-01-12 19:17:37||INFO|HTTP GET /swagger/index.html responded 200 in 834.4995 ms
+2020-01-12 19:18:44|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2020-01-12 19:18:45||INFO|HTTP GET /swagger/index.html responded 200 in 1189.1546 ms
+2020-01-12 19:18:45|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui.css
+2020-01-12 19:18:45|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-standalone-preset.js
+2020-01-12 19:18:45|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-bundle.js
+2020-01-12 19:18:46||INFO|HTTP GET /swagger/swagger-ui.css responded 200 in 869.2127 ms
+2020-01-12 19:18:46||INFO|HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 862.0385 ms
+2020-01-12 19:18:46||INFO|HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 864.1385 ms
+2020-01-12 19:18:47|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/v1/swagger.json
+2020-01-12 19:18:48||INFO|HTTP GET /swagger/v1/swagger.json responded 200 in 586.7837 ms

@@ -1,0 +1,5 @@
+﻿@using ETB.WebApp.Utilities
+@using Microsoft.Extensions.Options;
+@inject IOptions<ContactDetails> ContactDetails
+
+<span class="mr-4 p-2 font-weight-bolder">@ContactDetails.Value.PhoneNo</span>

@@ -1,0 +1,62 @@
+﻿@using ETB.WebApp.Utilities
+@model ETB.WebApp.Models.SMSViewModel
+@{
+    Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
+}
+
+<h2>@Subtitle.OtherToolsSMS</h2>
+<hr />
+<form asp-action="SmsSenderTool", method="post">
+    <div class="row">
+        <div class="col-md-6 bg-white  box-shadow mb-3">
+            <div class="form-row">
+                <div class="form-group col-md-12 focus">
+                    <label asp-for="CommaSepToNum" class="control-label"></label>
+                    <textarea asp-for="CommaSepToNum" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="CommaSepToNum" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label asp-for="Message" class="control-label"></label>
+                    <textarea asp-for="Message" class="form-control" rows="5"></textarea>
+                    <span asp-validation-for="Message" class="text-danger"></span>
+                    <div class="text-muted align-content-right">
+                        <label>Character count:</label> <label id="lblCharCount"></label>
+                    </div>
+                    <div class="text-muted align-content-right">
+                        <label>Character count (with no space):</label> <label id="lblCharCountnoSp"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-inline">
+                    <input type="submit" value="Send" id="btnSend" class="btn btn-primary" />
+                    <input type="button" value="Clear" id="btnClear" class="btn btn-danger ml-2" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#Message').keyup(function () {
+            Lengthcount();
+        });
+
+        Lengthcount();
+
+        $('#btnClear').on('click', function() {
+            $('#CommaSepToNum').val('');
+            $('#Message').val('');
+        });
+    });
+
+    function Lengthcount() {
+        var txtlen = $('#Message').val().length;
+        var txtlennospace = $('#Message').val().replace(/\s+/g, '').length;
+        $('#lblCharCount').text(txtlen);
+        $('#lblCharCountnoSp').text(txtlennospace);
+    }
+</script>

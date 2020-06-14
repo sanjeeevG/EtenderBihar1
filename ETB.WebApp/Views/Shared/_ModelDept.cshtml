@@ -1,0 +1,123 @@
+﻿@model ETB.WebApp.Models.DeptViewModel
+<!-- Modal -->
+<div class="modal fade" id="deptModalCenter" tabindex="-1" role="dialog" aria-labelledby="deptModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <form id="formDept">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deptModalLongTitle">Add New Department</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label class="control-label">State</label>
+                                    <select class="form-control dropdown" asp-for="SelState" asp-items="Model.States">
+                                        <option selected="selected" value="">-Select-</option>
+                                    </select>
+                                    <span asp-validation-for="SelState" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label class="control-label">Department</label>
+                                    <input class="form-control" asp-for="Department1" />
+                                    <span asp-validation-for="Department1" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-sm-center">
+                                <span class="d-flex justify-content-center" id="spnResult"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="btnSaveDept" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#deptModalCenter').on('hidden.bs.modal', function () {
+            $('.modal-body').find('input').val('').end();
+            $('#spnResult').text('');
+        });
+
+        $('#btnSaveDept').click(function () {
+            if (!$('#formDept').valid()) {
+                return false;
+            }
+            var data1 = {
+                States: {},
+                SelState: $('#SelState').val(),
+                Department1: $('#Department1').val()
+            };
+            $.ajax({
+                url: '@Url.Action("UpdateDepartment", "Departments")',
+                data: data1,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    if (result.status == "Error") {
+                        $('#spnResult').removeAttr("class", "text-success");
+                        $('#spnResult').attr("class", "text-danger");
+                        $('#spnResult').text(`Dept. [${$('#Department1').val()}] creation failed.`);
+                    }
+                    else {
+                        if ($('#Department').length) {
+                            $('#Department').val($('#Department1').val())
+                        }
+                        $('#spnResult').removeAttr("class", "text-danger");
+                        $('#spnResult').attr("class", "text-success");
+                        $('#spnResult').text(`Dept. [${$('#Department1').val()}] created successfully.`);
+                        $('#Department1').val('');
+                    }
+                },
+                error: function (errorResult) {
+                    console.log("error", errorResult.error);
+                }
+            });
+        });
+        $("#Department1").autocomplete({
+            maxShowItems: 5,
+            source: function (request, response) {
+                console.log(request.term);
+                var pref = {
+                    prefix: `${request.term}`,
+                    param1: "",
+                    param2: ""
+                };
+                $.ajax({
+                    url: '@Url.Action("GetAutoCompDept", "Departments")',
+                    data: pref,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return item;
+                        }))
+                    },
+                    error: function (response) {
+                        console.log(response.responseText);
+                    },
+                    failure: function (response) {
+                        console.log(response.responseText);
+                    }
+                });
+            },
+            select: function (e, i) {
+                console.log(i.item.val);
+            },
+            minLength: 1
+        });
+
+        $("#Department1").autocomplete("option", "appendTo", "#formDept");
+    });
+</script>

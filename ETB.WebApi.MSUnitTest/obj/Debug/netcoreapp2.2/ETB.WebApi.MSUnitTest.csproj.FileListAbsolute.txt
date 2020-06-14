@@ -1,0 +1,15 @@
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\bin\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.deps.json
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\bin\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.runtimeconfig.json
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\bin\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.runtimeconfig.dev.json
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\bin\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.dll
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\bin\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.pdb
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\obj\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.csprojAssemblyReference.cache
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\obj\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.csproj.CoreCompileInputs.cache
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\obj\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.AssemblyInfoInputs.cache
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\obj\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.AssemblyInfo.cs
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\obj\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.dll
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\obj\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.pdb
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\obj\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.genruntimeconfig.cache

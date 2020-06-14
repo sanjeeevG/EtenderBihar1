@@ -1,0 +1,252 @@
+﻿@using ETB.WebApp.Utilities
+@using ETB.Utilities
+@model ETB.WebApp.Models.UserDetailModelView
+
+@{
+    Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
+}
+
+<div class="form-row">
+    <h4 class="col-md-10">@Subtitle.UserDetailEdit - @Model.Id</h4>
+    <div class="col-md-2">
+        <a asp-action="Index2" asp-controller="Tenders" class="form-control d-inline btn-link">Back to List</a>
+    </div>
+</div>
+<hr />
+
+<form asp-action="UserDetail" method="POST" enctype="multipart/form-data">
+    <div class="row">
+        <div class="form-control bg-danger text-white ml-2 mr-2" asp-validation-summary="ModelOnly"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-9" style="border-right:1px solid gray;">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="UserInfoId" />
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label asp-for="Salutation" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="Salutation" asp-items="Html.GetEnumTextSelectList<ETB.Core.Entities.Salutations>()">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="Salutation" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="FName" class="control-label"></label>
+                    <input asp-for="FName" class="form-control" />
+                    <span asp-validation-for="FName" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="MName" class="control-label"></label>
+                    <input asp-for="MName" class="form-control" />
+                    <span asp-validation-for="MName" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="LName" class="control-label"></label>
+                    <input asp-for="LName" class="form-control" />
+                    <span asp-validation-for="LName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label asp-for="Gender" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="Gender" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.Gender>()">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="DOB" class="control-label"></label>
+                    <input asp-for="DOB" class="form-control" type="date" />
+                    <span asp-validation-for="DOB" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="Age" class="control-label"></label>
+                    <input asp-for="Age" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="Nationality" class="control-label"></label>
+                    <input asp-for="Nationality" class="form-control" />
+                    <span asp-validation-for="Nationality" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label asp-for="PanNo" class="control-label"></label>
+                    <input asp-for="PanNo" class="form-control" />
+                    <span asp-validation-for="PanNo" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="RegistrationNo" class="control-label"></label>
+                    <input asp-for="RegistrationNo" class="form-control" />
+                    <span asp-validation-for="RegistrationNo" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="Organisation" class="control-label"></label>
+                    <input asp-for="Organisation" class="form-control" />
+                    <span asp-validation-for="Organisation" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label asp-for="Address" class="control-label"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="City" class="control-label"></label>
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="Pin" class="control-label"></label>
+                    <input asp-for="Pin" class="form-control" />
+                    <span asp-validation-for="Pin" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="District" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="District" asp-items="@Model.Districts">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="District" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label asp-for="Email1" class="control-label"></label>
+                    <input asp-for="Email1" class="form-control" />
+                    <span asp-validation-for="Email1" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-5">
+                    <label asp-for="Email2Optinal" class="control-label"></label>
+                    <input asp-for="Email2Optinal" class="form-control" />
+                    <span asp-validation-for="Email2Optinal" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-2">
+                    <label asp-for="WantEmailNotfi" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="WantEmailNotfi" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.NotificationRequired>()">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="WantEmailNotfi" class="text-danger"></span>
+                    @*<input asp-for="WantEmailNotfi" class="form-control" />
+                        <span asp-validation-for="WantEmailNotfi" class="text-danger"></span>*@
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="CountryAreaCode" class="control-label"></label>
+                    <input asp-for="CountryAreaCode" class="form-control" value="+91" readonly="readonly" />
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="ContactNo1" class="control-label"></label>
+                    <label class="control-label  text-muted">[whatsup no]</label>
+                    <input asp-for="ContactNo1" class="form-control" />
+                    <span asp-validation-for="ContactNo1" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="ContactNo2Mobile" class="control-label"></label>
+                    <input asp-for="ContactNo2Mobile" class="form-control" />
+                    <span asp-validation-for="ContactNo2Mobile" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="ContactNo3Mobile" class="control-label"></label>
+                    <input asp-for="ContactNo3Mobile" class="form-control" />
+                    <span asp-validation-for="ContactNo3Mobile" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="WantSMSNotfi" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="WantSMSNotfi" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.NotificationRequired>()">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="WantSMSNotfi" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="WantWhatsUpNotfi" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="WantWhatsUpNotfi" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.NotificationRequired>()">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="WantWhatsUpNotfi" class="text-danger"></span>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-3">
+
+            <img id="photoImage" height="100" width="90" src="@Url.Content(Model.PhotoRelUrl)" class="rounded img-thumbnail" />
+
+            <div class="form-group">
+                <label asp-for="PhotoUrl" class="control-label"></label>
+                <input asp-for="PhotoUrl" type="hidden" />
+                <input asp-for="PhotoOriginalUrl" type="hidden" />
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="photofile" id="photofile" onchange="show(this)">
+                    <label class="custom-file-label" for="photofile">Choose file</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="WebUrl" class="control-label"></label>
+                <input asp-for="WebUrl" class="form-control" placeholder="http://" />
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="IsDetailUpdated" class="control-label"></label>
+                    <input asp-for="IsDetailUpdated" class="form-control" readonly="readonly" />
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label asp-for="IsActive" class="control-label"></label>
+                    <input asp-for="IsActive" class="form-control" readonly="readonly" />
+                </div>
+            </div>
+            <div class="form-row">
+                <input asp-for="CreationDate" type="hidden" />
+                <input asp-for="CreatedBy" type="hidden" />
+                <div class="form-group  col-md-6">
+                    <label asp-for="ModifiedBy" class="control-label"></label>
+                    <input asp-for="ModifiedBy" class="form-control" readonly="readonly" />
+                </div>
+                <div class="form-group  col-md-6">
+                    <label asp-for="ModificationDate" class="control-label"></label>
+                    <input asp-for="ModificationDate" class="form-control" readonly="readonly" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-inline">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index2" asp-controller="Tenders" class="form-control d-inline btn-link ml-2">Back to List</a>
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".custom-file-input").on("change", function (event) {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            $('#PhotoUrl').val(fileName);
+        });
+    });
+
+    function show(input) {
+        if (input.files && input.files[0]) {
+            var filerdr = new FileReader();
+            filerdr.onload = function (e) {
+                $('#photoImage').attr('src', e.target.result);
+            }
+            filerdr.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

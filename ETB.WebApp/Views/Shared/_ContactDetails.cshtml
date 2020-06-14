@@ -1,0 +1,8 @@
+﻿@using ETB.WebApp.Utilities
+@using Microsoft.Extensions.Options;
+@inject IOptions<ContactDetails> ContactDetails
+<div class="h2 mt-2 text-muted">Support</div>
+<div>
+    <p><stronger>Contact No: </stronger>@ContactDetails.Value.PhoneNo</p>
+    <p><stronger>Email Adrress: </stronger>@ContactDetails.Value.EmailAddress</p>
+</div>

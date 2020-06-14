@@ -1,0 +1,114 @@
+﻿@using ETB.Core.Entities
+@using ETB.WebApp.Utilities
+@using ETB.Utilities;
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@model ETB.WebApp.Models.RegisterViewModel
+@{
+    if (!string.IsNullOrEmpty(HttpContextAccessor.HttpContext.Session.GetString("UserId")))
+    {
+        Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+}
+<h2>@Subtitle.Register</h2>
+<hr />
+
+<div class="row">
+    <div class="col-md-5">
+        <div class="form-row">
+            <div class="form-control bg-danger text-white ml-2 mr-2" asp-validation-summary="ModelOnly"></div>
+        </div>
+        <form asp-action="Register" asp-controller="UserInfo" method="post">
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" placeholder="Enter Email as User Id" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pass" class="control-label"></label>
+                <input asp-for="Pass" type="password" class="form-control" placeholder="Enter Password" />
+                <span asp-validation-for="Pass" class="text-danger"></span>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label asp-for="Salutation" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="Salutation" asp-items="Html.GetEnumTextSelectList<ETB.Core.Entities.Salutations>()">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="Salutation" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-9">
+                    <label asp-for="FullName" class="control-label"></label>
+                    <input asp-for="FullName" class="form-control" placeholder="Enter Full Name Ex. Rohan Kumar Sharma" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="DOB" class="control-label"></label>
+                <input asp-for="DOB" class="form-control" />
+                <span asp-validation-for="DOB" class="text-danger"></span>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="CountryAreaCode" class="control-label"></label>
+                    <input asp-for="CountryAreaCode" class="form-control" value="+91" readonly="readonly" />
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="ContactNo1" class="control-label"></label>
+                    <input asp-for="ContactNo1" class="form-control" placeholder="Enter Phone No" />
+                    <span asp-validation-for="ContactNo1" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Email1" class="control-label"></label>
+                    <input asp-for="Email1" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" />
+                    <span asp-validation-for="Email1" class="text-danger"></span>
+                </div>
+            </div>
+            @{
+                var disabled = "disabled";
+                var pagInx = "Index";
+                if (!string.IsNullOrEmpty(HttpContextAccessor.HttpContext.Session.GetString("UserId")))
+                {
+                    var role = HttpContextAccessor.HttpContext.Session.GetString("Role");
+                    if (role == UserRole.Admin.ToString())
+                    {
+                        pagInx = "Index2";
+                        disabled = "None";
+                    }
+                }
+
+                <div class="form-group">
+                    <input id="hidIdpage" type="hidden" value="@pagInx" />
+                    <input id="hidSubDisAttr" type="hidden" value="@disabled" />
+                    <label asp-for="UserRole" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="UserRole" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.UserRole>()">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="UserRole" class="text-danger"></span>
+                </div>
+            }
+            <div class="form-group">
+                <input type="submit" value="Create your account" class="btn btn-primary" />
+                <a class="form-control d-inline btn-link ml-2" asp-controller="Tenders" asp-action="@pagInx">Go Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($('#hidSubDisAttr').val() == "disabled") {
+            $('#UserRole').attr("disabled", "disabled");
+        }
+        else if ($('#hidSubDisAttr').val() == "") {
+            $('#UserRole').removeAttr("disabled");
+        }
+    });
+</script>
+

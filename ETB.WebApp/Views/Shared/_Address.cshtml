@@ -1,0 +1,13 @@
+﻿@using ETB.WebApp.Utilities
+@using Microsoft.Extensions.Options;
+@inject IOptions<ContactDetails> ContactDetails
+
+<address>
+    @ContactDetails.Value.OrgName
+    <br />
+    @ContactDetails.Value.AddressLine1
+    <br />
+    @ContactDetails.Value.AddressLine2
+    <br />
+    @ContactDetails.Value.AddressLine3
+</address>

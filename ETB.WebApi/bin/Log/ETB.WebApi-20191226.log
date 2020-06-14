@@ -1,0 +1,646 @@
+2019-12-26 12:01:19|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2019-12-26 12:01:20||INFO|HTTP GET /swagger/index.html responded 200 in 972.1606 ms
+2019-12-26 12:01:20|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui.css
+2019-12-26 12:01:20|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-standalone-preset.js
+2019-12-26 12:01:20|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-bundle.js
+2019-12-26 12:01:20||INFO|HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 244.0824 ms
+2019-12-26 12:01:20||INFO|HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 253.0084 ms
+2019-12-26 12:01:20||INFO|HTTP GET /swagger/swagger-ui.css responded 200 in 309.8651 ms
+2019-12-26 12:01:21|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/v1/swagger.json
+2019-12-26 12:01:21||INFO|HTTP GET /swagger/v1/swagger.json responded 200 in 456.6603 ms
+2019-12-26 12:01:27|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:01:27|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:01:32|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Price' on entity type 'Service'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 12:01:32|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'CostOfBOQ' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 12:01:32|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EMD' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 12:01:32|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EstimatedCost' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 12:01:32|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceived' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 12:01:32|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceivedDate' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 12:01:32|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'OriginalAmt' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 12:01:32|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Amount' on entity type 'UserSubscription'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 12:01:33|Microsoft.EntityFrameworkCore.Query|WARN|Query: '(from Tender x in DbSet<Tender> where (int)[x].IsActive == 1 && [x].BidSubmissionEnDate >= DateTime....' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results.
+2019-12-26 12:01:35||INFO|HTTP GET /api/ATenders responded 200 in 8176.1945 ms
+2019-12-26 12:01:35||INFO|HTTP GET /api/ATenders responded 200 in 8187.8372 ms
+2019-12-26 12:01:35|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:01:35||INFO|HTTP GET /api/Districts responded 200 in 53.4183 ms
+2019-12-26 12:04:50|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:04:51|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:04:51||INFO|HTTP GET /api/ATenders responded 200 in 123.5879 ms
+2019-12-26 12:04:51||INFO|HTTP GET /api/ATenders responded 200 in 214.5348 ms
+2019-12-26 12:04:51|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:04:51||INFO|HTTP GET /api/Districts responded 200 in 73.0171 ms
+2019-12-26 12:05:26|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:05:26|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:05:26||INFO|HTTP GET /api/ATenders responded 200 in 79.1028 ms
+2019-12-26 12:05:26||INFO|HTTP GET /api/ATenders responded 200 in 87.4139 ms
+2019-12-26 12:05:26|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:05:26||INFO|HTTP GET /api/Districts responded 200 in 23.3197 ms
+2019-12-26 12:07:33|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:07:33|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:07:33||INFO|HTTP GET /api/ATenders responded 200 in 36.7457 ms
+2019-12-26 12:07:33||INFO|HTTP GET /api/ATenders responded 200 in 100.9614 ms
+2019-12-26 12:07:33|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:07:33||INFO|HTTP GET /api/Districts responded 200 in 26.0472 ms
+2019-12-26 12:08:14|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:08:14|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:08:14||INFO|HTTP GET /api/ATenders responded 200 in 79.6813 ms
+2019-12-26 12:08:14||INFO|HTTP GET /api/ATenders responded 200 in 73.2906 ms
+2019-12-26 12:08:14|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:08:14||INFO|HTTP GET /api/Districts responded 200 in 30.992 ms
+2019-12-26 12:08:41|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:08:41||INFO|HTTP GET /api/ATenders responded 200 in 57.2633 ms
+2019-12-26 12:08:41|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:08:41||INFO|HTTP GET /api/ATenders responded 200 in 62.3937 ms
+2019-12-26 12:08:41|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:08:41||INFO|HTTP GET /api/Districts responded 200 in 8.3939 ms
+2019-12-26 12:10:10|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:10:10|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:10:10||INFO|HTTP GET /api/ATenders responded 200 in 87.3955 ms
+2019-12-26 12:10:10||INFO|HTTP GET /api/ATenders responded 200 in 79.7461 ms
+2019-12-26 12:10:11|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:10:11||INFO|HTTP GET /api/Districts responded 200 in 19.4844 ms
+2019-12-26 12:12:34|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:12:34|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:12:34||INFO|HTTP GET /api/ATenders responded 200 in 55.9905 ms
+2019-12-26 12:12:34||INFO|HTTP GET /api/ATenders responded 200 in 145.3603 ms
+2019-12-26 12:12:34|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:12:34||INFO|HTTP GET /api/Districts responded 200 in 16.1002 ms
+2019-12-26 12:13:32|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:13:32||INFO|HTTP GET /api/ATenders responded 200 in 22.0372 ms
+2019-12-26 12:13:32|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:13:32||INFO|HTTP GET /api/ATenders responded 200 in 61.5953 ms
+2019-12-26 12:13:32|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:13:32||INFO|HTTP GET /api/Districts responded 200 in 11.9599 ms
+2019-12-26 12:14:24|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:14:24||INFO|HTTP GET /api/ATenders responded 200 in 34.3672 ms
+2019-12-26 12:14:24|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:14:24||INFO|HTTP GET /api/ATenders responded 200 in 79.0819 ms
+2019-12-26 12:14:24|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:14:24||INFO|HTTP GET /api/Districts responded 200 in 7.7104 ms
+2019-12-26 12:14:48|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:14:48|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:14:48||INFO|HTTP GET /api/ATenders responded 200 in 110.8581 ms
+2019-12-26 12:14:48||INFO|HTTP GET /api/ATenders responded 200 in 165.586 ms
+2019-12-26 12:14:48|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:14:48||INFO|HTTP GET /api/Districts responded 200 in 13.0721 ms
+2019-12-26 12:15:09|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:15:09||INFO|HTTP GET /api/ATenders responded 200 in 94.9725 ms
+2019-12-26 12:15:09|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:15:09||INFO|HTTP GET /api/ATenders responded 200 in 147.1573 ms
+2019-12-26 12:15:09|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:15:09||INFO|HTTP GET /api/Districts responded 200 in 21.8634 ms
+2019-12-26 12:15:31|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:15:31|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:15:32||INFO|HTTP GET /api/ATenders responded 200 in 74.7158 ms
+2019-12-26 12:15:32||INFO|HTTP GET /api/ATenders responded 200 in 69.1358 ms
+2019-12-26 12:15:32|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:15:32||INFO|HTTP GET /api/Districts responded 200 in 18.2709 ms
+2019-12-26 12:16:21|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:16:21||INFO|HTTP GET /api/ATenders responded 200 in 40.6599 ms
+2019-12-26 12:16:21|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:16:21||INFO|HTTP GET /api/ATenders responded 200 in 120.6223 ms
+2019-12-26 12:16:21|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:16:21||INFO|HTTP GET /api/Districts responded 200 in 14.0262 ms
+2019-12-26 12:16:39|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:16:39|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:16:39||INFO|HTTP GET /api/ATenders responded 200 in 19.1302 ms
+2019-12-26 12:16:39||INFO|HTTP GET /api/ATenders responded 200 in 119.9408 ms
+2019-12-26 12:16:39|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:16:40||INFO|HTTP GET /api/Districts responded 200 in 10.407 ms
+2019-12-26 12:17:12|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:17:12|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:17:12||INFO|HTTP GET /api/ATenders responded 200 in 101.0528 ms
+2019-12-26 12:17:12||INFO|HTTP GET /api/ATenders responded 200 in 115.8066 ms
+2019-12-26 12:17:12|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:17:12||INFO|HTTP GET /api/Districts responded 200 in 19.5781 ms
+2019-12-26 12:18:06|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:18:06|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:18:07||INFO|HTTP GET /api/ATenders responded 200 in 88.7354 ms
+2019-12-26 12:18:07||INFO|HTTP GET /api/ATenders responded 200 in 245.9535 ms
+2019-12-26 12:18:07|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:18:07||INFO|HTTP GET /api/Districts responded 200 in 225.2543 ms
+2019-12-26 12:18:58|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:18:58|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:18:58||INFO|HTTP GET /api/ATenders responded 200 in 192.5796 ms
+2019-12-26 12:18:58||INFO|HTTP GET /api/ATenders responded 200 in 534.8198 ms
+2019-12-26 12:18:58|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:18:59||INFO|HTTP GET /api/Districts responded 200 in 26.6384 ms
+2019-12-26 12:32:04|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:32:04|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:32:04||INFO|HTTP GET /api/ATenders responded 200 in 94.2304 ms
+2019-12-26 12:32:04||INFO|HTTP GET /api/ATenders responded 200 in 152.5848 ms
+2019-12-26 12:32:04|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:32:04||INFO|HTTP GET /api/Districts responded 200 in 21.7439 ms
+2019-12-26 12:32:21|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:32:21|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:32:21||INFO|HTTP GET /api/ATenders responded 200 in 94.2044 ms
+2019-12-26 12:32:21||INFO|HTTP GET /api/ATenders responded 200 in 127.5488 ms
+2019-12-26 12:32:21|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:32:21||INFO|HTTP GET /api/Districts responded 200 in 91.3346 ms
+2019-12-26 12:33:08|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:33:08||INFO|HTTP GET /api/ATenders responded 200 in 48.8161 ms
+2019-12-26 12:33:08|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:33:08||INFO|HTTP GET /api/ATenders responded 200 in 151.973 ms
+2019-12-26 12:33:08|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:33:08||INFO|HTTP GET /api/Districts responded 200 in 22.3331 ms
+2019-12-26 12:33:46|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:33:46||INFO|HTTP GET /api/ATenders responded 200 in 82.2434 ms
+2019-12-26 12:33:46|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:33:46||INFO|HTTP GET /api/ATenders responded 200 in 200.2749 ms
+2019-12-26 12:33:46|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:33:46||INFO|HTTP GET /api/Districts responded 200 in 17.3028 ms
+2019-12-26 12:35:24|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:35:25|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:35:25||INFO|HTTP GET /api/ATenders responded 200 in 67.4161 ms
+2019-12-26 12:35:25||INFO|HTTP GET /api/ATenders responded 200 in 79.7206 ms
+2019-12-26 12:35:25|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:35:25||INFO|HTTP GET /api/Districts responded 200 in 28.3846 ms
+2019-12-26 12:36:22|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:36:22||INFO|HTTP GET /api/ATenders responded 200 in 108.3497 ms
+2019-12-26 12:36:23|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:36:23||INFO|HTTP GET /api/ATenders responded 200 in 209.1826 ms
+2019-12-26 12:36:23|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:36:23||INFO|HTTP GET /api/Districts responded 200 in 8.6176 ms
+2019-12-26 12:38:07|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:38:07|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:38:07||INFO|HTTP GET /api/ATenders responded 200 in 100.1999 ms
+2019-12-26 12:38:07||INFO|HTTP GET /api/ATenders responded 200 in 88.2771 ms
+2019-12-26 12:38:08|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:38:08||INFO|HTTP GET /api/Districts responded 200 in 16.9006 ms
+2019-12-26 12:38:32|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:38:32||INFO|HTTP GET /api/ATenders responded 200 in 47.5671 ms
+2019-12-26 12:38:32|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:38:32||INFO|HTTP GET /api/ATenders responded 200 in 44.8308 ms
+2019-12-26 12:38:32|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:38:32||INFO|HTTP GET /api/Districts responded 200 in 13.999 ms
+2019-12-26 12:39:41|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:39:41||INFO|HTTP GET /api/ATenders responded 200 in 74.7341 ms
+2019-12-26 12:39:41|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:39:41||INFO|HTTP GET /api/ATenders responded 200 in 133.2924 ms
+2019-12-26 12:39:41|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:39:41||INFO|HTTP GET /api/Districts responded 200 in 19.4029 ms
+2019-12-26 12:40:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:40:29||INFO|HTTP GET /api/ATenders responded 200 in 90.9207 ms
+2019-12-26 12:40:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:40:29||INFO|HTTP GET /api/ATenders responded 200 in 177.0784 ms
+2019-12-26 12:40:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:40:29||INFO|HTTP GET /api/Districts responded 200 in 11.4131 ms
+2019-12-26 12:41:17|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:41:17||INFO|HTTP GET /api/ATenders responded 200 in 78.3076 ms
+2019-12-26 12:41:17|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:41:18||INFO|HTTP GET /api/ATenders responded 200 in 80.8262 ms
+2019-12-26 12:41:18|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:41:18||INFO|HTTP GET /api/Districts responded 200 in 15.5282 ms
+2019-12-26 12:42:47|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:42:47||INFO|HTTP GET /api/ATenders responded 200 in 110.2317 ms
+2019-12-26 12:42:47|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:42:47||INFO|HTTP GET /api/ATenders responded 200 in 67.6994 ms
+2019-12-26 12:42:47|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:42:47||INFO|HTTP GET /api/Districts responded 200 in 8.3325 ms
+2019-12-26 12:43:28|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:43:28||INFO|HTTP GET /api/ATenders responded 200 in 41.7395 ms
+2019-12-26 12:43:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:43:29||INFO|HTTP GET /api/ATenders responded 200 in 71.4193 ms
+2019-12-26 12:43:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:43:29||INFO|HTTP GET /api/Districts responded 200 in 12.5918 ms
+2019-12-26 12:44:12|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:44:12|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:44:12||INFO|HTTP GET /api/ATenders responded 200 in 71.5105 ms
+2019-12-26 12:44:12||INFO|HTTP GET /api/ATenders responded 200 in 60.6111 ms
+2019-12-26 12:44:12|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:44:12||INFO|HTTP GET /api/Districts responded 200 in 48.702 ms
+2019-12-26 12:53:04|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:53:04|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:53:04||INFO|HTTP GET /api/ATenders responded 200 in 150.0218 ms
+2019-12-26 12:53:05||INFO|HTTP GET /api/ATenders responded 200 in 153.3266 ms
+2019-12-26 12:53:05|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:53:05||INFO|HTTP GET /api/Districts responded 200 in 16.5053 ms
+2019-12-26 12:53:43|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:53:43||INFO|HTTP GET /api/ATenders responded 200 in 73.0905 ms
+2019-12-26 12:53:43|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:53:43||INFO|HTTP GET /api/ATenders responded 200 in 89.276 ms
+2019-12-26 12:53:43|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:53:43||INFO|HTTP GET /api/Districts responded 200 in 15.5368 ms
+2019-12-26 12:54:00|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:54:00|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:54:00||INFO|HTTP GET /api/ATenders responded 200 in 18.1043 ms
+2019-12-26 12:54:00||INFO|HTTP GET /api/ATenders responded 200 in 49.6334 ms
+2019-12-26 12:54:00|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:54:00||INFO|HTTP GET /api/Districts responded 200 in 113.0548 ms
+2019-12-26 12:54:50|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:54:50||INFO|HTTP GET /api/ATenders responded 200 in 56.3523 ms
+2019-12-26 12:54:50|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:54:50||INFO|HTTP GET /api/ATenders responded 200 in 52.0932 ms
+2019-12-26 12:54:50|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:54:50||INFO|HTTP GET /api/Districts responded 200 in 8.1809 ms
+2019-12-26 12:55:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:55:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:55:29||INFO|HTTP GET /api/ATenders responded 200 in 176.4908 ms
+2019-12-26 12:55:29||INFO|HTTP GET /api/ATenders responded 200 in 203.0755 ms
+2019-12-26 12:55:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:55:29||INFO|HTTP GET /api/Districts responded 200 in 19.7849 ms
+2019-12-26 12:56:10|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:56:10|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:56:10||INFO|HTTP GET /api/ATenders responded 200 in 64.1453 ms
+2019-12-26 12:56:10||INFO|HTTP GET /api/ATenders responded 200 in 100.7823 ms
+2019-12-26 12:56:10|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:56:10||INFO|HTTP GET /api/Districts responded 200 in 21.0415 ms
+2019-12-26 12:56:20|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:56:20||INFO|HTTP GET /api/ATenders responded 200 in 34.1719 ms
+2019-12-26 12:56:20|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:56:20||INFO|HTTP GET /api/ATenders responded 200 in 98.0265 ms
+2019-12-26 12:56:20|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:56:20||INFO|HTTP GET /api/Districts responded 200 in 15.3677 ms
+2019-12-26 12:57:09|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:57:09|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:57:09||INFO|HTTP GET /api/ATenders responded 200 in 136.8826 ms
+2019-12-26 12:57:09||INFO|HTTP GET /api/ATenders responded 200 in 63.536 ms
+2019-12-26 12:57:09|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:57:09||INFO|HTTP GET /api/Districts responded 200 in 8.6415 ms
+2019-12-26 12:58:39|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:58:39|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:58:39||INFO|HTTP GET /api/ATenders responded 200 in 101.3172 ms
+2019-12-26 12:58:40||INFO|HTTP GET /api/ATenders responded 200 in 158.4969 ms
+2019-12-26 12:58:40|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:58:40||INFO|HTTP GET /api/Districts responded 200 in 19.8362 ms
+2019-12-26 12:59:13|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:59:13||INFO|HTTP GET /api/ATenders responded 200 in 69.7947 ms
+2019-12-26 12:59:13|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:59:13||INFO|HTTP GET /api/ATenders responded 200 in 217.1029 ms
+2019-12-26 12:59:13|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:59:13||INFO|HTTP GET /api/Districts responded 200 in 33.0075 ms
+2019-12-26 12:59:25|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:59:25|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 12:59:25||INFO|HTTP GET /api/ATenders responded 200 in 50.9135 ms
+2019-12-26 12:59:26||INFO|HTTP GET /api/ATenders responded 200 in 117.7607 ms
+2019-12-26 12:59:26|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 12:59:26||INFO|HTTP GET /api/Districts responded 200 in 68.4175 ms
+2019-12-26 13:00:16|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:00:16|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:00:16||INFO|HTTP GET /api/ATenders responded 200 in 62.2673 ms
+2019-12-26 13:00:16||INFO|HTTP GET /api/ATenders responded 200 in 178.2379 ms
+2019-12-26 13:00:16|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 13:00:16||INFO|HTTP GET /api/Districts responded 200 in 8.8969 ms
+2019-12-26 13:01:40|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:01:40|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:01:40||INFO|HTTP GET /api/ATenders responded 200 in 48.9362 ms
+2019-12-26 13:01:40||INFO|HTTP GET /api/ATenders responded 200 in 75.3364 ms
+2019-12-26 13:01:40|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 13:01:40||INFO|HTTP GET /api/Districts responded 200 in 65.9134 ms
+2019-12-26 13:02:06|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:02:06|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:02:06||INFO|HTTP GET /api/ATenders responded 200 in 53.5081 ms
+2019-12-26 13:02:06||INFO|HTTP GET /api/ATenders responded 200 in 64.4693 ms
+2019-12-26 13:02:06|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 13:02:06||INFO|HTTP GET /api/Districts responded 200 in 54.551 ms
+2019-12-26 13:02:19|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:02:19||INFO|HTTP GET /api/ATenders responded 200 in 118.3941 ms
+2019-12-26 13:02:19|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:02:19||INFO|HTTP GET /api/ATenders responded 200 in 106.1327 ms
+2019-12-26 13:02:19|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 13:02:19||INFO|HTTP GET /api/Districts responded 200 in 16.8099 ms
+2019-12-26 13:02:41|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:02:41||INFO|HTTP GET /api/ATenders responded 200 in 46.3037 ms
+2019-12-26 13:02:41|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:02:42||INFO|HTTP GET /api/ATenders responded 200 in 120.4611 ms
+2019-12-26 13:02:42|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 13:02:42||INFO|HTTP GET /api/Districts responded 200 in 13.9195 ms
+2019-12-26 13:03:06|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:03:06|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:03:06||INFO|HTTP GET /api/ATenders responded 200 in 113.7867 ms
+2019-12-26 13:03:06||INFO|HTTP GET /api/ATenders responded 200 in 184.2854 ms
+2019-12-26 13:03:06|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 13:03:06||INFO|HTTP GET /api/Districts responded 200 in 13.981 ms
+2019-12-26 13:04:08|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:04:08||INFO|HTTP GET /api/ATenders responded 200 in 183.2969 ms
+2019-12-26 13:04:08|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:04:08||INFO|HTTP GET /api/ATenders responded 200 in 239.6168 ms
+2019-12-26 13:04:08|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 13:04:08||INFO|HTTP GET /api/Districts responded 200 in 11.7831 ms
+2019-12-26 13:24:42|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:24:42|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:24:42||INFO|HTTP GET /api/ATenders responded 200 in 147.9263 ms
+2019-12-26 13:24:42||INFO|HTTP GET /api/ATenders responded 200 in 104.4161 ms
+2019-12-26 13:24:42|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 13:24:42||INFO|HTTP GET /api/Districts responded 200 in 15.4858 ms
+2019-12-26 13:54:18|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2019-12-26 13:54:20||INFO|HTTP GET /swagger/index.html responded 200 in 1902.5279 ms
+2019-12-26 13:54:21|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/v1/swagger.json
+2019-12-26 13:54:22||INFO|HTTP GET /swagger/v1/swagger.json responded 200 in 747.8435 ms
+2019-12-26 13:54:31|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:54:31|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:54:31|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:54:38|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Price' on entity type 'Service'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 13:54:38|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'CostOfBOQ' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 13:54:38|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EMD' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 13:54:38|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EstimatedCost' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 13:54:38|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceived' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 13:54:38|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceivedDate' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 13:54:38|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'OriginalAmt' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 13:54:38|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Amount' on entity type 'UserSubscription'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 13:54:39|Microsoft.EntityFrameworkCore.Query|WARN|Query: '(from Tender x in DbSet<Tender> where (int)[x].IsActive == 1 && [x].BidSubmissionEnDate >= DateTime....' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results.
+2019-12-26 13:54:44||INFO|HTTP GET /api/ATenders responded 200 in 13036.9032 ms
+2019-12-26 13:54:44||INFO|HTTP GET /api/ATenders responded 200 in 13065.5865 ms
+2019-12-26 13:54:44||INFO|HTTP GET /api/ATenders responded 200 in 13047.1485 ms
+2019-12-26 13:54:45|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 13:54:46||INFO|HTTP GET /api/Districts responded 200 in 282.6752 ms
+2019-12-26 13:55:19|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:55:19||INFO|HTTP GET /api/ATenders responded 200 in 24.7151 ms
+2019-12-26 13:55:19|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:55:19|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:55:19||INFO|HTTP GET /api/ATenders responded 200 in 124.3108 ms
+2019-12-26 13:55:19||INFO|HTTP GET /api/ATenders responded 200 in 117.5469 ms
+2019-12-26 13:55:24|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 13:55:26||INFO|HTTP GET /api/Districts responded 200 in 2539.482 ms
+2019-12-26 13:56:56|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:56:59||INFO|HTTP GET /api/ATenders responded 200 in 3656.5518 ms
+2019-12-26 13:56:59|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:56:59|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:56:59||INFO|HTTP GET /api/ATenders responded 200 in 227.5143 ms
+2019-12-26 13:56:59||INFO|HTTP GET /api/ATenders responded 200 in 238.6058 ms
+2019-12-26 13:57:00|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 13:57:00||INFO|HTTP GET /api/Districts responded 200 in 24.4099 ms
+2019-12-26 13:57:33|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:57:33|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:57:33||INFO|HTTP GET /api/ATenders responded 200 in 67.0708 ms
+2019-12-26 13:57:33|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:57:34||INFO|HTTP GET /api/ATenders responded 200 in 182.4395 ms
+2019-12-26 13:57:34||INFO|HTTP GET /api/ATenders responded 200 in 232.847 ms
+2019-12-26 13:57:34|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 13:57:34||INFO|HTTP GET /api/Districts responded 200 in 82.4654 ms
+2019-12-26 13:58:01|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:58:01|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:58:01||INFO|HTTP GET /api/ATenders responded 200 in 116.2906 ms
+2019-12-26 13:58:01|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 13:58:01||INFO|HTTP GET /api/ATenders responded 200 in 178.4785 ms
+2019-12-26 13:58:01||INFO|HTTP GET /api/ATenders responded 200 in 104.1544 ms
+2019-12-26 13:58:02|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 13:58:02||INFO|HTTP GET /api/Districts responded 200 in 152.3757 ms
+2019-12-26 13:58:54|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2019-12-26 13:58:55||INFO|HTTP GET /swagger/index.html responded 200 in 1248.5503 ms
+2019-12-26 13:58:56|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/v1/swagger.json
+2019-12-26 13:58:57||INFO|HTTP GET /swagger/v1/swagger.json responded 200 in 577.915 ms
+2019-12-26 14:11:04|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2019-12-26 14:11:06||INFO|HTTP GET /swagger/index.html responded 200 in 1538.541 ms
+2019-12-26 14:11:07|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/v1/swagger.json
+2019-12-26 14:11:07||INFO|HTTP GET /swagger/v1/swagger.json responded 200 in 701.2944 ms
+2019-12-26 14:48:10|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2019-12-26 14:48:14||INFO|HTTP GET /swagger/index.html responded 200 in 4177.7549 ms
+2019-12-26 14:48:14|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui.css
+2019-12-26 14:48:14|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-standalone-preset.js
+2019-12-26 14:48:14|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-bundle.js
+2019-12-26 14:48:15||INFO|HTTP GET /swagger/swagger-ui.css responded 200 in 976.6515 ms
+2019-12-26 14:48:15||INFO|HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 1341.4152 ms
+2019-12-26 14:48:16||INFO|HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 1605.3457 ms
+2019-12-26 14:48:18|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/v1/swagger.json
+2019-12-26 14:48:19||INFO|HTTP GET /swagger/v1/swagger.json responded 200 in 808.5418 ms
+2019-12-26 16:33:59|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2019-12-26 16:34:02||INFO|HTTP GET /swagger/index.html responded 200 in 2283.0236 ms
+2019-12-26 16:34:03|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/v1/swagger.json
+2019-12-26 16:34:04||INFO|HTTP GET /swagger/v1/swagger.json responded 200 in 1103.1881 ms
+2019-12-26 16:34:19|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 16:34:19|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 16:34:19|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 16:34:30|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Price' on entity type 'Service'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 16:34:31|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'CostOfBOQ' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 16:34:31|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EMD' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 16:34:31|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EstimatedCost' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 16:34:31|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceived' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 16:34:31|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceivedDate' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 16:34:31|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'OriginalAmt' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 16:34:31|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Amount' on entity type 'UserSubscription'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 16:34:41||INFO|HTTP GET /api/ATenders responded 200 in 21492.0423 ms
+2019-12-26 16:34:41||INFO|HTTP GET /api/ATenders responded 200 in 22421.6956 ms
+2019-12-26 16:34:41||INFO|HTTP GET /api/ATenders responded 200 in 22208.0836 ms
+2019-12-26 16:34:43|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 16:34:44||INFO|HTTP GET /api/Districts responded 200 in 616.7358 ms
+2019-12-26 16:35:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ValidateCredentials
+2019-12-26 16:35:29||INFO|HTTP POST /api/ValidateCredentials responded 200 in 394.4448 ms
+2019-12-26 16:35:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSignInLogs
+2019-12-26 16:35:30|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 16:35:30||INFO|HTTP GET /api/ATenders responded 200 in 177.2405 ms
+2019-12-26 16:35:30||INFO|HTTP POST /api/UserSignInLogs responded 201 in 1154.7486 ms
+2019-12-26 16:35:34|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 16:35:34|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 16:35:34||INFO|HTTP GET /api/ATenders responded 200 in 74.4091 ms
+2019-12-26 16:35:34||INFO|HTTP GET /api/ATenders responded 200 in 117.7562 ms
+2019-12-26 16:35:34|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 16:35:34||INFO|HTTP GET /api/Districts responded 200 in 177.5399 ms
+2019-12-26 16:35:38|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 16:35:38||INFO|HTTP GET /api/Districts responded 200 in 25.1404 ms
+2019-12-26 16:35:41|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserDetails
+2019-12-26 16:35:41||INFO|HTTP GET /api/UserDetails responded 200 in 418.7275 ms
+2019-12-26 16:35:48|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 16:35:48||INFO|HTTP GET /api/AServices responded 200 in 177.5414 ms
+2019-12-26 16:35:51|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 16:35:52||INFO|HTTP GET /api/UserSubscriptions responded 200 in 998.4586 ms
+2019-12-26 16:35:56|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 16:35:57||INFO|HTTP GET /api/ATenders responded 200 in 77.8532 ms
+2019-12-26 16:35:58|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 16:35:58|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 16:35:58||INFO|HTTP GET /api/ATenders responded 200 in 286.2692 ms
+2019-12-26 16:35:58||INFO|HTTP GET /api/ATenders responded 200 in 352.5359 ms
+2019-12-26 16:35:59|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 16:35:59||INFO|HTTP GET /api/Districts responded 200 in 41.3046 ms
+2019-12-26 16:36:04|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 16:36:04||INFO|HTTP GET /api/Districts responded 200 in 114.0423 ms
+2019-12-26 16:36:06|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserDetails
+2019-12-26 16:36:06||INFO|HTTP GET /api/UserDetails responded 200 in 35.0076 ms
+2019-12-26 16:36:13|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 16:36:14||INFO|HTTP GET /api/AServices responded 200 in 737.8386 ms
+2019-12-26 16:36:16|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 16:36:16||INFO|HTTP GET /api/UserSubscriptions responded 200 in 41.467 ms
+2019-12-26 16:44:22|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 16:44:23||INFO|HTTP GET /api/AServices responded 200 in 969.5306 ms
+2019-12-26 16:44:42|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 16:44:42||INFO|HTTP GET /api/UserSubscriptions responded 200 in 459.5939 ms
+2019-12-26 16:46:47|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 16:46:47||INFO|HTTP GET /api/AServices responded 200 in 45.2549 ms
+2019-12-26 16:47:56|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 16:47:56||INFO|HTTP GET /api/AServices responded 200 in 92.6992 ms
+2019-12-26 16:49:51|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 16:49:51||INFO|HTTP GET /api/AServices responded 200 in 123.7496 ms
+2019-12-26 16:50:11|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 16:50:12||INFO|HTTP GET /api/UserSubscriptions responded 200 in 58.832 ms
+2019-12-26 16:50:25|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 16:50:25||INFO|HTTP GET /api/AServices responded 200 in 43.2614 ms
+2019-12-26 16:50:39|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 16:50:39||INFO|HTTP GET /api/UserSubscriptions responded 200 in 26.9765 ms
+2019-12-26 16:51:55|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 16:51:55||INFO|HTTP GET /api/AServices responded 200 in 39.4941 ms
+2019-12-26 16:52:04|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 16:52:04||INFO|HTTP GET /api/UserSubscriptions responded 200 in 85.6065 ms
+2019-12-26 16:52:37|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 16:52:38||INFO|HTTP GET /api/AServices responded 200 in 1477.5781 ms
+2019-12-26 16:53:03|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 16:53:03||INFO|HTTP GET /api/UserSubscriptions responded 200 in 68.6516 ms
+2019-12-26 16:54:20|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 16:54:20||INFO|HTTP GET /api/AServices responded 200 in 52.6514 ms
+2019-12-26 16:55:04|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 16:55:04||INFO|HTTP GET /api/UserSubscriptions responded 200 in 49.5611 ms
+2019-12-26 16:59:34|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 16:59:34||INFO|HTTP GET /api/AServices responded 200 in 393.4001 ms
+2019-12-26 17:00:44|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 17:00:44||INFO|HTTP GET /api/AServices responded 200 in 38.1204 ms
+2019-12-26 17:00:50|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 17:00:51||INFO|HTTP GET /api/UserSubscriptions responded 200 in 1199.8293 ms
+2019-12-26 17:02:20|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 17:02:20||INFO|HTTP GET /api/AServices responded 200 in 42.1761 ms
+2019-12-26 17:02:27|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 17:02:27||INFO|HTTP GET /api/UserSubscriptions responded 200 in 141.8369 ms
+2019-12-26 17:02:34|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 17:02:35||INFO|HTTP GET /api/AServices responded 200 in 106.3418 ms
+2019-12-26 17:02:38|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 17:02:38||INFO|HTTP GET /api/UserSubscriptions responded 200 in 61.6387 ms
+2019-12-26 17:02:56|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 17:02:56||INFO|HTTP GET /api/AServices responded 200 in 16.754 ms
+2019-12-26 17:03:02|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 17:03:02||INFO|HTTP GET /api/UserSubscriptions responded 200 in 302.0552 ms
+2019-12-26 17:04:13|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 17:04:13||INFO|HTTP GET /api/AServices responded 200 in 48.6669 ms
+2019-12-26 17:04:16|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 17:04:17||INFO|HTTP GET /api/UserSubscriptions responded 200 in 116.9285 ms
+2019-12-26 17:05:23|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 17:05:23||INFO|HTTP GET /api/AServices responded 200 in 47.6845 ms
+2019-12-26 17:05:27|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 17:05:27||INFO|HTTP GET /api/UserSubscriptions responded 200 in 107.0676 ms
+2019-12-26 17:06:45|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 17:06:45||INFO|HTTP GET /api/AServices responded 200 in 103.5349 ms
+2019-12-26 17:06:48|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 17:06:48||INFO|HTTP GET /api/UserSubscriptions responded 200 in 53.3058 ms
+2019-12-26 17:11:40|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 17:11:41||INFO|HTTP GET /api/AServices responded 200 in 1489.6786 ms
+2019-12-26 17:11:47|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 17:11:48||INFO|HTTP GET /api/UserSubscriptions responded 200 in 644.5408 ms
+2019-12-26 17:12:33|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 17:12:34||INFO|HTTP GET /api/AServices responded 200 in 111.7011 ms
+2019-12-26 17:12:36|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 17:12:37||INFO|HTTP GET /api/UserSubscriptions responded 200 in 65.1714 ms
+2019-12-26 17:13:54|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 17:13:54||INFO|HTTP GET /api/AServices responded 200 in 74.034 ms
+2019-12-26 17:14:13|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 17:14:17||INFO|HTTP GET /api/UserSubscriptions responded 200 in 3129.3609 ms
+2019-12-26 17:14:57|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 17:14:57||INFO|HTTP GET /api/AServices responded 200 in 130.3263 ms
+2019-12-26 17:15:03|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 17:15:03||INFO|HTTP GET /api/UserSubscriptions responded 200 in 158.8184 ms
+2019-12-26 17:15:23|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 17:15:23||INFO|HTTP GET /api/AServices responded 200 in 40.9899 ms
+2019-12-26 17:15:26|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 17:15:26||INFO|HTTP GET /api/UserSubscriptions responded 200 in 208.6692 ms
+2019-12-26 17:19:16|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 17:19:16||INFO|HTTP GET /api/AServices responded 200 in 332.4639 ms
+2019-12-26 17:19:31|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 17:19:33||INFO|HTTP GET /api/UserSubscriptions responded 200 in 2084.345 ms
+2019-12-26 17:19:45|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 17:19:46||INFO|HTTP GET /api/ATenders responded 200 in 631.7455 ms
+2019-12-26 17:19:56|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 17:19:58|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 17:20:00||INFO|HTTP GET /api/ATenders responded 200 in 3857.3827 ms
+2019-12-26 17:20:04|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 17:20:04||INFO|HTTP GET /api/ATenders responded 200 in 5217.1959 ms
+2019-12-26 17:20:04||INFO|HTTP GET /api/Districts responded 200 in 67.7328 ms
+2019-12-26 17:20:12|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 17:20:16||INFO|HTTP GET /api/Districts responded 200 in 3754.9288 ms
+2019-12-26 17:20:18|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserDetails
+2019-12-26 17:20:18||INFO|HTTP GET /api/UserDetails responded 200 in 45.136 ms
+2019-12-26 17:20:55|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 17:20:55||INFO|HTTP GET /api/AServices responded 200 in 409.1522 ms
+2019-12-26 17:20:56|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 17:20:56||INFO|HTTP GET /api/UserSubscriptions responded 200 in 75.7472 ms
+2019-12-26 17:30:27|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2019-12-26 17:30:30||INFO|HTTP GET /swagger/index.html responded 200 in 2098.9064 ms
+2019-12-26 17:30:31|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-standalone-preset.js
+2019-12-26 17:30:31|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-bundle.js
+2019-12-26 17:30:31|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui.css
+2019-12-26 17:30:31||INFO|HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 706.2362 ms
+2019-12-26 17:30:31||INFO|HTTP GET /swagger/swagger-ui.css responded 200 in 424.6596 ms
+2019-12-26 17:30:31||INFO|HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 503.8456 ms
+2019-12-26 17:30:33|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/v1/swagger.json
+2019-12-26 17:30:33||INFO|HTTP GET /swagger/v1/swagger.json responded 200 in 733.0047 ms
+2019-12-26 17:30:46|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 17:30:46|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 17:30:46|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 17:30:50|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Price' on entity type 'Service'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 17:30:50|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'CostOfBOQ' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 17:30:50|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EMD' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 17:30:50|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EstimatedCost' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 17:30:50|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceived' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 17:30:50|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceivedDate' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 17:30:50|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'OriginalAmt' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 17:30:50|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Amount' on entity type 'UserSubscription'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2019-12-26 17:30:54||INFO|HTTP GET /api/ATenders responded 200 in 7983.5113 ms
+2019-12-26 17:30:54||INFO|HTTP GET /api/ATenders responded 200 in 7878.0689 ms
+2019-12-26 17:30:54||INFO|HTTP GET /api/ATenders responded 200 in 7885.4673 ms
+2019-12-26 17:30:54|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 17:30:55||INFO|HTTP GET /api/Districts responded 200 in 136.8824 ms
+2019-12-26 17:31:51|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ValidateCredentials
+2019-12-26 17:31:52||INFO|HTTP POST /api/ValidateCredentials responded 200 in 847.4998 ms
+2019-12-26 17:31:52|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSignInLogs
+2019-12-26 17:31:52|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 17:31:52||INFO|HTTP GET /api/ATenders responded 200 in 34.8507 ms
+2019-12-26 17:31:53||INFO|HTTP POST /api/UserSignInLogs responded 201 in 989.5755 ms
+2019-12-26 17:31:54|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 17:31:54|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2019-12-26 17:31:54||INFO|HTTP GET /api/ATenders responded 200 in 112.509 ms
+2019-12-26 17:31:54||INFO|HTTP GET /api/ATenders responded 200 in 79.1591 ms
+2019-12-26 17:31:54|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 17:31:54||INFO|HTTP GET /api/Districts responded 200 in 110.2738 ms
+2019-12-26 17:32:08|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2019-12-26 17:32:08||INFO|HTTP GET /api/Districts responded 200 in 9.7119 ms
+2019-12-26 17:32:09|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserDetails
+2019-12-26 17:32:09||INFO|HTTP GET /api/UserDetails responded 200 in 265.5832 ms
+2019-12-26 17:59:14|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserDetails/17
+2019-12-26 17:59:14||INFO|HTTP GET /api/UserDetails/17 responded 200 in 489.6746 ms
+2019-12-26 17:59:15|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 17:59:15||INFO|HTTP GET /api/AServices responded 200 in 110.5852 ms
+2019-12-26 17:59:16|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 17:59:16||INFO|HTTP GET /api/UserSubscriptions responded 200 in 359.3848 ms
+2019-12-26 17:59:49|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserDetails/17
+2019-12-26 17:59:49||INFO|HTTP GET /api/UserDetails/17 responded 200 in 21.5873 ms
+2019-12-26 17:59:49|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 17:59:49||INFO|HTTP GET /api/AServices responded 200 in 32.459 ms
+2019-12-26 18:00:03|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 18:00:03||INFO|HTTP GET /api/UserSubscriptions responded 200 in 163.1321 ms
+2019-12-26 18:00:27|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserDetails/17
+2019-12-26 18:00:27||INFO|HTTP GET /api/UserDetails/17 responded 200 in 27.0688 ms
+2019-12-26 18:00:27|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 18:00:27||INFO|HTTP GET /api/AServices responded 200 in 12.864 ms
+2019-12-26 18:00:30|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 18:00:30||INFO|HTTP GET /api/UserSubscriptions responded 200 in 98.7355 ms
+2019-12-26 18:02:09|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserDetails/17
+2019-12-26 18:02:09||INFO|HTTP GET /api/UserDetails/17 responded 200 in 41.3617 ms
+2019-12-26 18:02:09|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 18:02:09||INFO|HTTP GET /api/AServices responded 200 in 37.5443 ms
+2019-12-26 18:02:11|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 18:02:12||INFO|HTTP GET /api/UserSubscriptions responded 200 in 269.6555 ms
+2019-12-26 18:02:24|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserDetails/17
+2019-12-26 18:02:24||INFO|HTTP GET /api/UserDetails/17 responded 200 in 12.0515 ms
+2019-12-26 18:02:24|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 18:02:24||INFO|HTTP GET /api/AServices responded 200 in 14.0709 ms
+2019-12-26 18:02:27|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 18:02:27||INFO|HTTP GET /api/UserSubscriptions responded 200 in 43.2647 ms
+2019-12-26 18:02:47|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserDetails/17
+2019-12-26 18:02:47||INFO|HTTP GET /api/UserDetails/17 responded 200 in 27.3021 ms
+2019-12-26 18:02:47|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 18:02:47||INFO|HTTP GET /api/AServices responded 200 in 24.6956 ms
+2019-12-26 18:02:49|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 18:02:49||INFO|HTTP GET /api/UserSubscriptions responded 200 in 204.8202 ms
+2019-12-26 18:03:22|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserDetails/17
+2019-12-26 18:03:22||INFO|HTTP GET /api/UserDetails/17 responded 200 in 21.9768 ms
+2019-12-26 18:03:22|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 18:03:22||INFO|HTTP GET /api/AServices responded 200 in 14.7701 ms
+2019-12-26 18:03:25|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 18:03:25||INFO|HTTP GET /api/UserSubscriptions responded 200 in 75.7986 ms
+2019-12-26 18:03:42|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserDetails/17
+2019-12-26 18:03:42||INFO|HTTP GET /api/UserDetails/17 responded 200 in 8.5214 ms
+2019-12-26 18:03:42|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 18:03:42||INFO|HTTP GET /api/AServices responded 200 in 11.3403 ms
+2019-12-26 18:03:43|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 18:03:43||INFO|HTTP GET /api/UserSubscriptions responded 200 in 15.5133 ms
+2019-12-26 18:04:50|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserDetails/17
+2019-12-26 18:04:50||INFO|HTTP GET /api/UserDetails/17 responded 200 in 28.9092 ms
+2019-12-26 18:04:50|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/AServices
+2019-12-26 18:04:50||INFO|HTTP GET /api/AServices responded 200 in 16.6018 ms
+2019-12-26 18:04:51|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSubscriptions
+2019-12-26 18:04:51||INFO|HTTP GET /api/UserSubscriptions responded 200 in 19.5104 ms

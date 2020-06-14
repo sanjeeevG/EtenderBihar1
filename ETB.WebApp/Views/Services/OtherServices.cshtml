@@ -1,0 +1,74 @@
+﻿@using ETB.WebApp.Utilities
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    var uId = @HttpContextAccessor.HttpContext.Session.GetString("UserId");
+    if (uId == null)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
+    }
+}
+<h2>@Subtitle.OtherServices</h2>
+<hr />
+<div class="container">
+    <div class="row">
+        <h3>
+            We are also please to assist individual &amp; organisation with below services at incredibly comfortable price.
+            Please contact at the above given number for more details.
+        </h3>
+    </div>
+    <div class="row mt-4">
+        <div class="card-group">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">1.</div>
+                <div class="card-body">
+                    <h4 class="card-title font-weight-bold">Digital Signature</h4>
+                    <p class="card-text">Digital signature is must for tender service and we help individual to obtain one. This legal certificate is legally accepted under IT Act 2000.</p>
+                    <span>Act Ref: <a class="text-white"  target="_blank" href="https://dot.gov.in/sites/default/files/itbill2000_0.pdf">Click here</a></span>
+                </div>
+            </div>
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header">2.</div>
+                <div class="card-body">
+                    <h4 class="card-title font-weight-bold">EPF &amp; ESIC</h4>
+                        <p class="card-text">ESIC Registration is must for organisations employing 20 or more persons. This is governed by ESIC Act 1948.</p>
+                        <span>PF Act Ref: <a class="text-white" target="_blank" href="https://epfindia.gov.in/site_docs/PDFs/Downloads_PDFs/EPFAct1952.pdf">Click here</a></span>
+                        <span>ESIC Act Ref: <a class="text-white" target="_blank" href="https://www.esic.nic.in/attachments/actfile/ae036213fec2e5ca97e2c9314a1fc9e9.pdf">Click here</a></span>
+</div>
+            </div>
+            @*</div>
+                <div class="card-group">*@
+            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">3.</div>
+                <div class="card-body">
+                    <h4 class="card-title font-weight-bold">Tender Upload</h4>
+                    <p class="card-text">We help Contactor to prepare tender document, guidance and upload of the tender documents.</p>
+                </div>
+            </div>
+            <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                <div class="card-header">4.</div>
+                <div class="card-body">
+                    <h4 class="card-title font-weight-bold">GST</h4>
+                    <p class="card-text">We help individual to obtain GST No.</p>
+                    <span>Act Ref: <a class="text-white" target="_blank" href="http://gstcouncil.gov.in/sites/default/files/CGST.pdf">Click here</a></span>
+                </div>
+            </div>
+            @*</div>
+                <div class="card-group">*@
+            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">5.</div>
+                <div class="card-body">
+                    <h4 class="card-title font-weight-bold">Contactor Registration</h4>
+                    <p class="card-text">We help contractor registration for class I to IV at different government departments (Ex: RWD, BCD, RCD...  etc.)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

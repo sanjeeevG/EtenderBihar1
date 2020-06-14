@@ -1,0 +1,499 @@
+﻿@using ETB.WebApp.Utilities
+@model ETB.WebApp.Models.TenderViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
+
+    if (TempData["notice"] != null)
+    {
+        var tempStatusResult = (ETB.Core.Entities.StatusResult)TempData.Peek("notice");
+        var status = tempStatusResult.Status;
+        var statusText = tempStatusResult.StatusDetail;
+        if (status == ETB.Core.Entities.StatusText.Successful.ToString())
+        {
+            <script type="text/javascript">
+                toastr.success("@statusText", "@ViewBag.Title");
+            </script>
+        }
+        else
+        {
+            <script type="text/javascript">
+                toastr.error("@statusText", "@ViewBag.Title");
+            </script>
+        }
+    }
+
+}
+<div class="form-row">
+    <div class="col-lg-9">
+        @{
+            if (Model.ParentTenderId != 0)
+            {
+                <h4 class="col-md-11">@Subtitle.TenderCEdit - @Model.Id (<a href='@Url.Action("View", "Tenders", new {id = Model.ParentTenderId})'> Tender: @Model.ParentTenderId</a>)</h4>
+            }
+            else
+            {
+                <h4 class="col-md-11">@Subtitle.TenderEdit - @Model.Id</h4>
+            }
+
+        }
+    </div>
+    <div class="col-lg-3">
+        <a id="btnCreatewithnit" href='@Url.Action("Create", "Tenders", new {refid = Model.Id })' class="form-control d-inline btn-link">Add New With this NIT</a>
+        <a asp-action="Index2" class="form-control d-inline btn-link">Back to List</a>
+    </div>
+</div>
+<hr />
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="form-control bg-danger text-white ml-2 mr-2" asp-validation-summary="ModelOnly"></div>
+    </div>
+    <div class="row bg-light">
+        <div class="col-md-6 bg-white  box-shadow mb-3">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="PublishOrLive" class="control-label"></label>
+                    <select asp-for="PublishOrLive" class="form-control" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.PublishOrLive>()">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="PublishOrLive" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4 focus">
+                    <label asp-for="NIT" class="control-label"></label>
+                    <input asp-for="NIT" class="form-control" />
+                    <span asp-validation-for="NIT" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="TenderRef" class="control-label"></label>
+                    <input asp-for="TenderRef" class="form-control" />
+                    <span asp-validation-for="TenderRef" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="WorkNo" class="control-label"></label>
+                    <input asp-for="WorkNo" class="form-control" />
+                    <span asp-validation-for="WorkNo" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label class="control-label">Tender Documents</label>
+                    <div class="border border-info">
+                        @foreach (var td in Model.TenderDocs)
+                        {
+                            var idx = Model.TenderDocs.IndexOf(td) + 1;
+                            var type = td.DocFor == ETB.Core.Entities.DocFor.NIT ? "T" : "C";
+                            <div style="height:auto">
+                                <label class="control-label col-md-1">@idx.</label>
+                                <label class="control-label col-md-1">@type</label>
+                                <a href="@Url.Content(td.DocRelPathName)" target="_blank" class="col-md-10">@td.DocName</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label class="control-label">NIT Document Upload</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="formFile" id="formFile">
+                        <label class="custom-file-label" for="formFile">Choose file</label>
+                    </div>
+                </div>
+                <input type="hidden" asp-for="TenderDocument" class="form-control" readonly="readonly" />
+            </div>
+            <div class="form-row">
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label asp-for="TenderType" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="TenderType" asp-items="Model.TenderTypes">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="TenderType" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-8">
+                    <label asp-for="TenderTitle" class="control-label"></label>
+                    <input asp-for="TenderTitle" class="form-control" />
+                    <span asp-validation-for="TenderTitle" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescOfWork" class="control-label"></label>
+                <textarea asp-for="DescOfWork" rows="8" class="form-control"></textarea>
+                <span asp-validation-for="DescOfWork" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 bg-white  box-shadow mb-3">
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label asp-for="COT" class="control-label"></label>
+                    <input asp-for="COT" class="form-control" />
+                    <span asp-validation-for="COT" class="text-danger"></span>
+                </div>
+                <div class="form-group  col-md-5">
+                    <label asp-for="Organisation" class="control-label"></label>
+                    <input asp-for="Organisation" class="form-control" />
+                    <span asp-validation-for="Organisation" class="text-danger"></span>
+                </div>
+                <div class="form-group  col-md-4">
+                    <label asp-for="Department" class="control-label"></label>
+                    <input asp-for="Department" class="form-control" />
+                    <span asp-validation-for="Department" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group  col-md-4">
+                    <label asp-for="District" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="District" asp-items="Model.Districts">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="District" class="text-danger"></span>
+                </div>
+
+                <div class="form-group  col-md-4">
+                    <label asp-for="Division" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="SelDivisions" asp-items="Model.Divisions" multiple="multiple"></select>
+                    <input type="hidden" asp-for="Division" />
+                    <span asp-validation-for="SelDivisions" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group  col-md-4">
+                    <label asp-for="Region" class="control-label"></label>
+                    <input asp-for="Region" class="form-control" />
+                    <span asp-validation-for="Region" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label asp-for="ePublishDate" class="control-label"></label>
+                    <input asp-for="ePublishDate" class="form-control" type="text" asp-format="{0:dd-MM-yyyy HH:mm}" />
+                    <span asp-validation-for="ePublishDate" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="DocumentDownloadStDate" class="control-label"></label>
+                    <input asp-for="DocumentDownloadStDate" class="form-control" type="text" asp-format="{0:dd-MM-yyyy HH:mm}" />
+                    <span asp-validation-for="DocumentDownloadStDate" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="DocumentDownloadEdDate" class="control-label"></label>
+                    <input asp-for="DocumentDownloadEdDate" class="form-control" type="text" asp-format="{0:dd-MM-yyyy HH:mm}" />
+                    <span asp-validation-for="DocumentDownloadEdDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label asp-for="BidOpeningDate" class="control-label"></label>
+                    <input asp-for="BidOpeningDate" class="form-control" type="text" asp-format="{0:dd-MM-yyyy HH:mm}" />
+                    <span asp-validation-for="BidOpeningDate" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="BidSubmissionStDate" class="control-label"></label>
+                    <input asp-for="BidSubmissionStDate" class="form-control" type="text" asp-format="{0:dd-MM-yyyy HH:mm}" />
+                    <span asp-validation-for="BidSubmissionStDate" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="BidSubmissionEnDate" class="control-label"></label>
+                    <input asp-for="BidSubmissionEnDate" class="form-control" type="text" asp-format="{0:dd-MM-yyyy HH:mm}" />
+                    <span asp-validation-for="BidSubmissionEnDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label asp-for="Currency" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="Currency" disabled="disabled" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.Currency>()">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <input type="hidden" asp-for="ValueFactor" />
+                    <label asp-for="EstimatedCost" class="control-label"></label>
+                    <label class="small text-muted">(in @Model.ValueFactor)</label>
+                    <input asp-for="EstimatedCost" class="form-control" type="number" />
+                    <span asp-validation-for="EstimatedCost" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="UnEmployedEng" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="UnEmployedEng" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.IsYesNo>()">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="BankCertificate" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="BankCertificate" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.BankCertificate>()">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label asp-for="EMD" class="control-label"></label>
+                    <label id="lblEmdCal" class="control-label text-muted">(2% = 0)</label>
+                    <label class="small text-muted">(in @Model.ValueFactor)</label>
+                    <input asp-for="EMD" class="form-control" type="number" />
+                    <span asp-validation-for="EMD" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label asp-for="EMDPaymentOption" class="control-label"></label>
+                    <input asp-for="EMDPaymentOption" class="form-control" type="hidden" />
+                    <div class="col-md-12" style="padding-left:0px;padding-right:0px;">
+                        <div class="dropdown">
+                            <button class="form-control btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                -EMD Pay. Options-
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                @*<ul id="districtList" class="list-group"></ul>*@
+
+                                @foreach (var cVal in Html.GetEnumSelectList<ETB.Core.Entities.EMDPaymentOption>())
+                                {
+                                    bool isChecked = false;
+                                    if (@Model.EMDPaymentOptions != null && @Model.EMDPaymentOptions.Contains(cVal.Text))
+                                    {
+                                        isChecked = true;
+                                    }
+                                    <div class="d-flex">
+                                        <div class="form-control">
+                                            <input type="checkbox" checked="@isChecked" name="EMDPaymentOptions" aria-label="Checkbox for following text input" id="chekEMDPO_@cVal.Text" value="@cVal.Text" /><span class="ml-1">@cVal.Text</span>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <label class="h6 small text-muted" id="selPayOptions"></label>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="EMDPayableAt" class="control-label"></label>
+                    <input asp-for="EMDPayableAt" class="form-control" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label asp-for="CostOfBOQ" class="control-label"></label>
+                    <input asp-for="CostOfBOQ" class="form-control" type="number" />
+                    <span asp-validation-for="CostOfBOQ" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="PaymentOption" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="PaymentOption" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.PaymentOption>()">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="PayableAt" class="control-label"></label>
+                    <input asp-for="PayableAt" class="form-control" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label asp-for="TenderRefSiteAddress" class="control-label"></label>
+                    <input asp-for="TenderRefSiteAddress" class="form-control" placeholder="http://" />
+                    <span asp-validation-for="TenderRefSiteAddress" class="text-danger"></span>
+                </div>
+            </div>
+            <input type="hidden" asp-for="ParentTenderId" />
+            <input type="hidden" asp-for="IsActive" />
+            <input type="hidden" asp-for="CreatedBy" />
+            <input type="hidden" asp-for="CreationDate" />
+            <input type="hidden" asp-for="ModificationDate" />
+            <input type="hidden" asp-for="ModificationDate" />
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="submit" value="Save" id="btnSave" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    <a asp-action="Index2" class="form-control d-inline btn-link">Back to List</a>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //setting focus
+        $('.focus :input:first').focus();
+
+        $('#SelDivisions').select2({
+            placeholder: "Select divisions",
+            minimumInputLength: 1,
+            multiple: true,
+            maximumSelectionSize: 5,
+        });
+
+        $(".custom-file-input").on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            console.log(fileName);
+            $('#TenderDocument').val(fileName);
+        });
+
+        $('#ePublishDate').datetimepicker({
+            format: 'd-m-Y H:i',
+            defaultTime: '00:00',
+            mask: false
+        });
+        $('#DocumentDownloadStDate').datetimepicker({
+            format: 'd-m-Y H:i',
+            defaultTime: '00:00',
+            mask: false
+        });
+        $('#DocumentDownloadEdDate').datetimepicker({
+            format: 'd-m-Y H:i',
+            defaultTime: '00:00',
+            mask: false
+        });
+        $('#BidOpeningDate').datetimepicker({
+            format: 'd-m-Y H:i',
+            defaultTime: '00:00',
+            mask: false
+        });
+        $('#BidSubmissionStDate').datetimepicker({
+            format: 'd-m-Y H:i',
+            defaultTime: '00:00',
+            mask: false
+        });
+        $('#BidSubmissionEnDate').datetimepicker({
+            format: 'd-m-Y H:i',
+            defaultTime: '00:00',
+            mask: false
+        });
+
+        calcEMDVal();
+        function calcEMDVal() {
+            if ($('#UnEmployedEng').val() == "1") {
+                var val = `${parseFloat($('#EstimatedCost').val()) * 0.01}`
+                val = parseFloat(val).toFixed(2);
+                $('#lblEmdCal').text(`(1% = ${val})`);
+                $('#EMD').val(val);
+            }
+            else {
+                var val = `${parseFloat($('#EstimatedCost').val()) * 0.02}`
+                val = parseFloat(val).toFixed(2);
+                $('#lblEmdCal').text(`(2% = ${val})`);
+                $('#EMD').val(val);
+
+            }
+        }
+        $('#UnEmployedEng').change(function () {
+            calcEMDVal();
+        });
+        $('#EstimatedCost').on('change', function () {
+            calcEMDVal();
+        });
+
+        getEMDOption();
+        function getEMDOption() {
+            var checkedVals = $('input:checkbox[id^="chekEMDPO_"]:checked').map(function () {
+                return this.value;
+            }).get();
+
+            if (checkedVals.length > 0) {
+                $('#selPayOptions').text(`[${checkedVals}]`);
+                $('#EMDPaymentOption').val(checkedVals);
+            }
+        }
+        $('input:checkbox[id^="chekEMDPO_"]').change(function () {
+            getEMDOption();
+        });
+
+        $("#District").change(function () {
+            LoadDivisionOnDeptChange();
+        });
+
+        function LoadDivisionOnDeptChange() {
+            var dept = $("#Department").val();
+            var divSelect = $('#SelDivisions');
+
+            var filter = { Department: "", District: $('#District').val()};
+
+            divSelect.empty();
+
+            $.getJSON('@Url.Action("GetDivisionsForDistOrDept")', filter, function (result) {
+                console.log(result);
+                console.log(result.datas);
+                    if (result.status == "Successful") {
+                        $.each(result.datas, function (index, division) {
+                            divSelect.append($('<option/>', {
+                                value: division.divisionName,
+                                text: division.divisionName
+                            }));
+                        });
+                    }
+                    else {
+                        console.log(result.error);
+                    }
+                });
+        }
+
+        @*$("#Department").select2({
+            minimumInputLength: 2,
+            tags: [],
+            ajax: {
+                url:'@Url.Action("GetAutoCompDept", "Departments")',
+                dataType: 'json',
+                type: "GET",
+                quietMillis: 50,
+                data: function (term) {
+                    return {
+                        term: term
+                    };
+                },
+                results: function (data) {
+                    return {
+                        results: $.map(data, function (item) {
+                            return {
+                                text: item.completeName,
+                                slug: item.slug,
+                                id: item.id
+                            }
+                        })
+                    };
+                }
+            }
+        });*@
+
+        $("#Department").autocomplete({
+            maxShowItems: 5,
+            source: function (request, response) {
+                console.log(request.term);
+                var pref = {
+                    prefix: `${request.term}`,
+                    param1: "",
+                    param2: ""
+                };
+                $.ajax({
+                    url: '@Url.Action("GetAutoCompDept", "Departments")',
+                    data: pref,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return item;
+                        }))
+                    },
+                    error: function (response) {
+                        console.log(response.responseText);
+                    },
+                    failure: function (response) {
+                        console.log(response.responseText);
+                    }
+                });
+            },
+            select: function (e, i) {
+                console.log(i.item.val);
+            },
+            minLength: 1
+        });
+
+        $('#btnCreatewithnit').click(function () {
+
+        });
+    });
+</script>
+

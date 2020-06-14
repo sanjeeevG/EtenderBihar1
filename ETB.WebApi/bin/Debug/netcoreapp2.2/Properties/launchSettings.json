@@ -1,0 +1,32 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:49305",
+      "sslPort": 44307
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger/index.html",
+      "environmentVariables": {
+        "ASPNETCORE_LOGLocation": "E:\\Sanjeev\\EtenderBihar\\Source\\EtenderBihar\\WebApi\\WebApi",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "WebApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/values",
+      "environmentVariables": {
+        "ASPNETCORE_LOGLocation": "E:\\Sanjeev\\EtenderBihar\\Source\\EtenderBihar\\WebApi\\WebApi",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+    }
+  }
+}

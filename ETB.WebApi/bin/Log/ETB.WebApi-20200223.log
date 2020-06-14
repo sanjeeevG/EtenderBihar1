@@ -1,0 +1,106 @@
+2020-02-23 21:13:28|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2020-02-23 21:13:30||INFO|HTTP GET /swagger/index.html responded 200 in 2440.7058 ms
+2020-02-23 21:13:30|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-standalone-preset.js
+2020-02-23 21:13:31|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui.css
+2020-02-23 21:13:31|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/swagger-ui-bundle.js
+2020-02-23 21:13:31||INFO|HTTP GET /swagger/swagger-ui.css responded 200 in 289.5111 ms
+2020-02-23 21:13:31||INFO|HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 391.0651 ms
+2020-02-23 21:13:31||INFO|HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 329.7179 ms
+2020-02-23 21:13:32|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/v1/swagger.json
+2020-02-23 21:13:32||INFO|HTTP GET /swagger/v1/swagger.json responded 200 in 605.4626 ms
+2020-02-23 21:13:41|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:13:41|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:13:41|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:13:46|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Price' on entity type 'Service'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-23 21:13:46|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'CostOfBOQ' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-23 21:13:46|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EMD' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-23 21:13:46|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EstimatedCost' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-23 21:13:46|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceived' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-23 21:13:46|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceivedDate' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-23 21:13:46|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'OriginalAmt' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-23 21:13:46|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Amount' on entity type 'UserSubscription'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-23 21:13:52||INFO|HTTP GET /api/ATenders responded 200 in 11480.0392 ms
+2020-02-23 21:13:54||INFO|HTTP GET /api/ATenders responded 200 in 13460.3921 ms
+2020-02-23 21:13:55||INFO|HTTP GET /api/ATenders responded 200 in 14207.8326 ms
+2020-02-23 21:13:55|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2020-02-23 21:13:55||INFO|HTTP GET /api/Districts responded 200 in 314.1412 ms
+2020-02-23 21:15:34|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ValidateCredentials
+2020-02-23 21:15:35||INFO|HTTP POST /api/ValidateCredentials responded 200 in 761.3822 ms
+2020-02-23 21:15:35|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSignInLogs
+2020-02-23 21:15:36|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:15:37||INFO|HTTP POST /api/UserSignInLogs responded 201 in 1633.3605 ms
+2020-02-23 21:15:39||INFO|HTTP GET /api/ATenders responded 200 in 2867.9121 ms
+2020-02-23 21:15:50|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:15:50|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:15:53||INFO|HTTP GET /api/ATenders responded 200 in 2427.7023 ms
+2020-02-23 21:15:53|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2020-02-23 21:15:53||INFO|HTTP GET /api/ATenders responded 200 in 2425.8128 ms
+2020-02-23 21:15:53||INFO|HTTP GET /api/Districts responded 200 in 274.7845 ms
+2020-02-23 21:16:14|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:16:17||INFO|HTTP GET /api/ATenders responded 200 in 3252.0892 ms
+2020-02-23 21:16:19|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:16:19|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:16:22||INFO|HTTP GET /api/ATenders responded 200 in 2920.0191 ms
+2020-02-23 21:16:23||INFO|HTTP GET /api/ATenders responded 200 in 3791.5431 ms
+2020-02-23 21:16:23|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2020-02-23 21:16:23||INFO|HTTP GET /api/Districts responded 200 in 264.6865 ms
+2020-02-23 21:30:44|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:30:48||INFO|HTTP GET /api/ATenders responded 200 in 3534.695 ms
+2020-02-23 21:30:50|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:30:50|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:30:52||INFO|HTTP GET /api/ATenders responded 200 in 2562.2713 ms
+2020-02-23 21:30:52|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2020-02-23 21:30:53||INFO|HTTP GET /api/Districts responded 200 in 278.6708 ms
+2020-02-23 21:30:54||INFO|HTTP GET /api/ATenders responded 200 in 3827.4465 ms
+2020-02-23 21:31:24|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:31:26||INFO|HTTP GET /api/ATenders responded 200 in 2458.6063 ms
+2020-02-23 21:31:37|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:31:37|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:31:39|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:31:40||INFO|HTTP GET /api/ATenders responded 200 in 3340.521 ms
+2020-02-23 21:31:40|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2020-02-23 21:31:41||INFO|HTTP GET /api/ATenders responded 200 in 3466.6023 ms
+2020-02-23 21:31:41||INFO|HTTP GET /api/Districts responded 200 in 268.8063 ms
+2020-02-23 21:31:42||INFO|HTTP GET /api/ATenders responded 200 in 3462.2117 ms
+2020-02-23 21:31:48|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:31:48|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:31:50||INFO|HTTP GET /api/ATenders responded 200 in 2458.3144 ms
+2020-02-23 21:31:50|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2020-02-23 21:31:50||INFO|HTTP GET /api/ATenders responded 200 in 2722.1721 ms
+2020-02-23 21:31:51||INFO|HTTP GET /api/Districts responded 200 in 377.9157 ms
+2020-02-23 21:32:32|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:32:34||INFO|HTTP GET /api/ATenders responded 200 in 2388.2066 ms
+2020-02-23 21:32:39|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:32:40|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:32:42||INFO|HTTP GET /api/ATenders responded 200 in 2416.4031 ms
+2020-02-23 21:32:42||INFO|HTTP GET /api/ATenders responded 200 in 2737.136 ms
+2020-02-23 21:32:42|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2020-02-23 21:32:43||INFO|HTTP GET /api/Districts responded 200 in 333.5146 ms
+2020-02-23 21:33:09|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:33:11||INFO|HTTP GET /api/ATenders responded 200 in 2540.7202 ms
+2020-02-23 21:33:22|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:33:25||INFO|HTTP GET /api/ATenders responded 200 in 2479.6129 ms
+2020-02-23 21:33:26|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:33:29||INFO|HTTP GET /api/ATenders responded 200 in 2459.8131 ms
+2020-02-23 21:34:31|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 21:34:34||INFO|HTTP GET /api/ATenders responded 200 in 2540.9448 ms
+2020-02-23 22:22:17|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2020-02-23 22:22:20||INFO|HTTP GET /swagger/index.html responded 200 in 2474.1206 ms
+2020-02-23 22:22:21|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/v1/swagger.json
+2020-02-23 22:22:22||INFO|HTTP GET /swagger/v1/swagger.json responded 200 in 622.8764 ms
+2020-02-23 22:22:30|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 22:22:30|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 22:22:30|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-02-23 22:22:36|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Price' on entity type 'Service'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-23 22:22:36|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'CostOfBOQ' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-23 22:22:36|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EMD' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-23 22:22:36|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EstimatedCost' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-23 22:22:36|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceived' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-23 22:22:36|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceivedDate' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-23 22:22:36|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'OriginalAmt' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-23 22:22:36|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Amount' on entity type 'UserSubscription'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-02-23 22:22:41||INFO|HTTP GET /api/ATenders responded 200 in 11260.7728 ms
+2020-02-23 22:22:43||INFO|HTTP GET /api/ATenders responded 200 in 13481.2332 ms
+2020-02-23 22:22:45||INFO|HTTP GET /api/ATenders responded 200 in 14560.1022 ms
+2020-02-23 22:22:45|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2020-02-23 22:22:45||INFO|HTTP GET /api/Districts responded 200 in 308.2172 ms

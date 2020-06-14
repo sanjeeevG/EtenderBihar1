@@ -1,0 +1,153 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
+}
+
+<h2>Services</h2>
+<hr />
+
+<div class="form-row">
+    <div class="col-lg-7">
+        <select id="selDuration" hidden="hidden" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.DurationType>()"></select>
+        <select id="selServiceType" hidden="hidden" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.ServiceType>()"></select>
+        <select id="selActive" hidden="hidden" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.IsActive>()"></select>
+        <div id="jsGrid"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$("#divFreeForm").hide();
+        var durList = [];
+        var serTList = [];
+        var isActList = [];
+        $("#selDuration > option").each(function () {
+            durList.push({ text: this.text, value: parseInt(this.value)});
+        });
+        $("#selServiceType > option").each(function () {
+            serTList.push({ text: this.text, value: parseInt(this.value) });
+        });
+        $("#selActive > option").each(function () {
+            isActList.push({ text: this.text, value: parseInt(this.value) });
+        });
+
+
+        LoadList();
+        function LoadList() {
+             $("#jsGrid").jsGrid({
+                height: "500px",
+                width:"100%",
+                loadIndication: true,
+                loadIndicationDelay: 5,
+                loadShading: true,
+                loadMessage: "Please wait, Loading...",
+                selecting: true,
+                paging: false,
+                pageSize: 4,
+                rowClass: "rowCss",
+                autoload: true,
+                controller: {
+                    loadData: function () {
+                        var d = $.Deferred();
+                        $.ajax({
+                            url: '@Url.Action("GetServices", "Services")',
+                            dataType: "json",
+                            contentType: "application/json; charset=utf-8",
+                        }).done(function (result) {
+                            d.resolve(result.datas);
+                        });
+                        return d.promise();
+                    }
+                },
+                 fields: [{ name: "id", title: "Id", width: 30, visible: true },
+                     { name: "name", title: "Name", visible: true, width: 250 },
+                     { name: "description", title: "Description",  visible: true, width: 250 },
+                     { name: "duration", title: "Duration For", type: "select", items: durList, valueField: "value", textField: "text", visible: true, width: 100 },
+                     { name: "serviceType", title: "Type", type: "select", items: serTList, valueField: "value", textField: "text", visible: true, width: 100 },
+                     { name: "price", title: "Price", visible: true, width: 100 },
+                     { name: "isActive", title: "Is Active", type: "select", items: isActList, valueField: "value", textField: "text", visible: true, width: 100 },
+                     { name: "modificationDate", title: "Modif. Date", visible: true, width: 150 },
+                ]
+            });
+        }
+        $('#btnCreate').click(function () {
+            clear();
+        });
+
+        //function clear() {
+        //    $("#divFreeForm").show();
+        //    $('#District').focus();
+        //    $('#DV_Department').val("");
+        //    $('#DV_District').val("");
+        //    $('#DV_Division').val("");
+        //}
+
+        @*$("#DV_Department").autocomplete({
+            maxShowItems: 5,
+            source: function (request, response) {
+                console.log(request.term);
+                var pref = {
+                    prefix: `${request.term}`,
+                    param1: "",
+                    param2: ""
+                };
+                $.ajax({
+                    url: '@Url.Action("GetAutoCompDept", "Departments")',
+                    data: pref,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        console.log(data);
+                        response($.map(data, function (item) {
+                            console.log(item);
+                            return item;
+                        }))
+                    },
+                    error: function (response) {
+                        console.log(response.responseText);
+                    },
+                    failure: function (response) {
+                        console.log(response.responseText);
+                    }
+                });
+            },
+            select: function (e, i) {
+                console.log(i.item.val);
+            },
+            minLength: 1
+        });
+
+        $('#btnSave').click(function () {
+            if (!$('#formDivision').valid()) {
+                return false;
+            }
+            var data1 = {
+                Id: 0,
+                Departments: {},
+                Districts: {},
+                DV_Department: $('#DV_Department').val(),
+                DV_District: $('#DV_District').val(),
+                DV_Division: $('#DV_Division').val()
+            };
+            $.ajax({
+                url: '@Url.Action("CreateNewDivision", "Divisions")',
+                data: data1,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    if (result.status == "Error") {
+                        console.log(result.error);
+                    }
+                    else {
+                        console.log(result.status);
+                    }
+                    LoadList();
+                    clear();
+                },
+                error: function (errorResult) {
+                    console.log("error", errorResult.error);
+                }
+            });
+        });*@
+    });
+</script>
+

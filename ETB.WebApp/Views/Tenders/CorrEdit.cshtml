@@ -1,0 +1,270 @@
+﻿@model ETB.WebApp.Models.TenderViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
+
+    if (TempData["notice"] != null)
+    {
+        var tempStatusResult = (ETB.Core.Entities.StatusResult)TempData.Peek("notice");
+        var status = tempStatusResult.Status;
+        var statusText = tempStatusResult.StatusDetail;
+        if (status == ETB.Core.Entities.StatusText.Successful.ToString())
+        {
+            <script type="text/javascript">
+                toastr.success("@statusText", "@ViewBag.Title");
+            </script>
+        }
+        else
+        {
+            <script type="text/javascript">
+                toastr.error("@statusText", "@ViewBag.Title");
+            </script>
+        }
+    }
+
+}
+<div class="form-row">
+    <h4 class="col-md-11">Tender (Edit) - @Model.Id</h4>
+    <div class="col-md-1 text-right">
+        
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</div>
+<hr />
+<form asp-action="Create" method="POST" enctype="multipart/form-data">
+    <div class="row bg-light">
+        <div class="col-md-6 bg-white  box-shadow mb-3">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="PublishOrLive" class="control-label"></label>
+                    <select asp-for="PublishOrLive" class="form-control" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.PublishOrLive>()">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="PublishOrLive" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3 focus">
+                    <label asp-for="NIT" class="control-label"></label>
+                    <input asp-for="NIT" class="form-control" />
+                    <span asp-validation-for="NIT" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-7">
+                    <label class="control-label">NIT Document Upload</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="formFile" id="formFile">
+                        <label class="custom-file-label" for="formFile">Choose file</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label asp-for="TenderRef" class="control-label"></label>
+                    <input asp-for="TenderRef" class="form-control" />
+                    <span asp-validation-for="TenderRef" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="WorkNo" class="control-label"></label>
+                    <input asp-for="WorkNo" class="form-control" />
+                    <span asp-validation-for="WorkNo" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="TenderDocument" class="control-label"></label>
+                    <input asp-for="TenderDocument" class="form-control" readonly="readonly" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label asp-for="TenderType" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="TenderType" asp-items="Model.TenderTypes">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="TenderType" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-8">
+                    <label asp-for="TenderTitle" class="control-label"></label>
+                    <input asp-for="TenderTitle" class="form-control" />
+                    <span asp-validation-for="TenderTitle" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescOfWork" class="control-label"></label>
+                <textarea asp-for="DescOfWork" rows="8" class="form-control"></textarea>
+                <span asp-validation-for="DescOfWork" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 bg-white  box-shadow mb-3">
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label asp-for="COT" class="control-label"></label>
+                    <input asp-for="COT" class="form-control" />
+                    <span asp-validation-for="COT" class="text-danger"></span>
+                </div>
+                <div class="form-group  col-md-5">
+                    <label asp-for="Organisation" class="control-label"></label>
+                    <input asp-for="Organisation" class="form-control" />
+                    <span asp-validation-for="Organisation" class="text-danger"></span>
+                </div>
+                <div class="form-group  col-md-4">
+                    <label asp-for="Department" class="control-label"></label>
+                    <input asp-for="Department" class="form-control" />
+                    <span asp-validation-for="Department" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group  col-md-4">
+                    <label asp-for="District" class="control-label"></label>
+                    @*<input asp-for="District" class="form-control" />*@
+                    <select class="form-control dropdown" asp-for="District" asp-items="Model.Districts">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="District" class="text-danger"></span>
+                </div>
+
+                <div class="form-group  col-md-4">
+                    <label asp-for="Division" class="control-label"></label>
+                    @*@Html.DropDownListFor(M => M.SelDivisions, Model.Divisions, new { @class = "form-control select-multiple", multiple = "multiple" })*@
+                    @*<input asp-for="District" class="form-control" />*@
+                    <select class="form-control dropdown" asp-for="SelDivisions" asp-items="Model.Divisions" multiple="multiple"></select>
+                    <input type="hidden" asp-for="Division" />
+                    <span asp-validation-for="SelDivisions" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group  col-md-4">
+                    <label asp-for="Region" class="control-label"></label>
+                    <input asp-for="Region" class="form-control" />
+                    <span asp-validation-for="Region" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label asp-for="ePublishDate" class="control-label"></label>
+                    <input asp-for="ePublishDate" class="form-control" type="text" asp-format="{0:dd-MM-yyyy HH:mm}" />
+                    <span asp-validation-for="ePublishDate" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="DocumentDownloadStDate" class="control-label"></label>
+                    <input asp-for="DocumentDownloadStDate" class="form-control" type="text" asp-format="{0:dd-MM-yyyy HH:mm}" />
+                    <span asp-validation-for="DocumentDownloadStDate" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="DocumentDownloadEdDate" class="control-label"></label>
+                    <input asp-for="DocumentDownloadEdDate" class="form-control" type="text" asp-format="{0:dd-MM-yyyy HH:mm}" />
+                    <span asp-validation-for="DocumentDownloadEdDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label asp-for="BidOpeningDate" class="control-label"></label>
+                    <input asp-for="BidOpeningDate" class="form-control" type="text" asp-format="{0:dd-MM-yyyy HH:mm}" />
+                    <span asp-validation-for="BidOpeningDate" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="BidSubmissionStDate" class="control-label"></label>
+                    <input asp-for="BidSubmissionStDate" class="form-control" type="text" asp-format="{0:dd-MM-yyyy HH:mm}" />
+                    <span asp-validation-for="BidSubmissionStDate" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="BidSubmissionEnDate" class="control-label"></label>
+                    <input asp-for="BidSubmissionEnDate" class="form-control" type="text" asp-format="{0:dd-MM-yyyy HH:mm}" />
+                    <span asp-validation-for="BidSubmissionEnDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label asp-for="Currency" class="control-label"></label>
+                    <select class="form-control dropdown" asp-for="Currency" disabled="disabled" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.Currency>()">
+                        <option selected="selected" value="">-Select-</option>
+                    </select>
+                    <span asp-validation-for="Currency" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="EstimatedCost" class="control-label"></label>
+                    <input asp-for="EstimatedCost" class="form-control" type="number" asp-format="{0:#,###.00}" />
+                    <span asp-validation-for="EstimatedCost" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="CostOfBOQ" class="control-label"></label>
+                    <input asp-for="CostOfBOQ" class="form-control" type="number" asp-format="{0:#,###.00}" />
+                    <span asp-validation-for="CostOfBOQ" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="EMD" class="control-label"></label>
+                    <input asp-for="EMD" class="form-control" type="number" asp-format="{0:#,###.00}" />
+                    <span asp-validation-for="EMD" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label asp-for="TenderRefSiteAddress" class="control-label"></label>
+                    <input asp-for="TenderRefSiteAddress" class="form-control" placeholder="http://" />
+                    <span asp-validation-for="TenderRefSiteAddress" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //setting focus
+        $('.focus :input:first').focus();
+
+        $('#SelDivisions').select2({
+            placeholder: "Select divisions",
+            minimumInputLength: 1,
+            multiple: true,
+            maximumSelectionSize: 5,
+        });
+
+        $(".custom-file-input").on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            console.log(fileName);
+            $('#TenderDocument').val(fileName);
+        });
+
+        $('#ePublishDate').datetimepicker({
+            format: 'd-m-Y H:i',
+            defaultTime: '00:00',
+            mask: true
+        });
+        $('#DocumentDownloadStDate').datetimepicker({
+            format: 'd-m-Y H:i',
+            defaultTime: '00:00',
+            mask: true
+        });
+        $('#DocumentDownloadEdDate').datetimepicker({
+            format: 'd-m-Y H:i',
+            defaultTime: '00:00',
+            mask: true
+        });
+        $('#BidOpeningDate').datetimepicker({
+            format: 'd-m-Y H:i',
+            defaultTime: '00:00',
+            mask: true
+        });
+        $('#BidSubmissionStDate').datetimepicker({
+            format: 'd-m-Y H:i',
+            defaultTime: '00:00',
+            mask: true
+        });
+        $('#BidSubmissionEnDate').datetimepicker({
+            format: 'd-m-Y H:i',
+            defaultTime: '00:00',
+            mask: true
+        });
+    });
+</script>
+

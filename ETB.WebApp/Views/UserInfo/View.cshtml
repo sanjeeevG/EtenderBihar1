@@ -1,0 +1,211 @@
+﻿@using ETB.WebApp.Utilities
+@using ETB.Utilities
+@model ETB.WebApp.Models.UserDetailModelView
+
+@{
+    Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
+}
+
+<div class="form-row do-not-print">
+    <h4 class="col-md-7">@Subtitle.UserDetailView - @Model.Id</h4>
+    <div class="col-md-5 align-self-end">
+        <div class="form-inline">
+            <a asp-action="Index" asp-controller="UserInfo" class="form-control d-inline btn-link">Back to List</a>
+            <a asp-action="Index2" asp-controller="Tenders" class="form-control d-inline btn-link ml-2">Back to Tender Dashboard</a>
+        </div>
+    </div>
+</div>
+<hr />
+
+
+<div class="row">
+    <div class="col-md-9" style="border-right:1px solid gray;">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="UserInfoId" />
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label asp-for="Salutation" class="control-label"></label>
+                <select class="form-control dropdown" disabled="disabled" asp-for="Salutation" asp-items="Html.GetEnumTextSelectList<ETB.Core.Entities.Salutations>()">
+                    <option selected="selected" value="">-Select-</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="FName" class="control-label"></label>
+                <input asp-for="FName" class="form-control" readonly="readonly" />
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="MName" class="control-label"></label>
+                <input asp-for="MName" class="form-control" readonly="readonly" />
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="LName" class="control-label"></label>
+                <input asp-for="LName" class="form-control" readonly="readonly" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label asp-for="Gender" class="control-label"></label>
+                <select class="form-control dropdown" asp-for="Gender" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.Gender>()" disabled="disabled">
+                    <option selected="selected" value="">-Select-</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="DOB" class="control-label"></label>
+                <input asp-for="DOB" class="form-control" type="date" readonly="readonly" />
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" readonly="readonly" />
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="Nationality" class="control-label"></label>
+                <input asp-for="Nationality" class="form-control" readonly="readonly" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label asp-for="PanNo" class="control-label"></label>
+                <input asp-for="PanNo" class="form-control" readonly="readonly" />
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="RegistrationNo" class="control-label"></label>
+                <input asp-for="RegistrationNo" class="form-control" readonly="readonly" />
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="Organisation" class="control-label"></label>
+                <input asp-for="Organisation" class="form-control" readonly="readonly" />
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" readonly="readonly" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" readonly="readonly" />
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" readonly="readonly" />
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="Pin" class="control-label"></label>
+                <input asp-for="Pin" class="form-control" readonly="readonly" />
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="District" class="control-label"></label>
+                <select class="form-control dropdown" asp-for="District" asp-items="@Model.Districts" disabled="disabled">
+                    <option selected="selected" value="">-Select-</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <label asp-for="Email1" class="control-label"></label>
+                <input asp-for="Email1" class="form-control" readonly="readonly" />
+            </div>
+            <div class="form-group col-md-5">
+                <label asp-for="Email2Optinal" class="control-label"></label>
+                <input asp-for="Email2Optinal" class="form-control" readonly="readonly" />
+            </div>
+
+            <div class="form-group col-md-2">
+                <label asp-for="WantEmailNotfi" class="control-label"></label>
+                <select class="form-control dropdown" asp-for="WantEmailNotfi" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.NotificationRequired>()" disabled="disabled">
+                    <option selected="selected" value="">-Select-</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label asp-for="CountryAreaCode" class="control-label"></label>
+                <input asp-for="CountryAreaCode" class="form-control" value="+91" readonly="readonly" />
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="ContactNo1" class="control-label"></label>
+                <label class="control-label  text-muted">[whatsup no]</label>
+                <input asp-for="ContactNo1" class="form-control" readonly="readonly" />
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="ContactNo2Mobile" class="control-label"></label>
+                <input asp-for="ContactNo2Mobile" class="form-control" readonly="readonly" />
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="ContactNo3Mobile" class="control-label"></label>
+                <input asp-for="ContactNo3Mobile" class="form-control" readonly="readonly" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label asp-for="WantSMSNotfi" class="control-label"></label>
+                <select class="form-control dropdown" asp-for="WantSMSNotfi" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.NotificationRequired>()" disabled="disabled">
+                    <option selected="selected" value="">-Select-</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="WantWhatsUpNotfi" class="control-label"></label>
+                <select class="form-control dropdown" asp-for="WantWhatsUpNotfi" asp-items="Html.GetEnumSelectList<ETB.Core.Entities.NotificationRequired>()" disabled="disabled">
+                    <option selected="selected" value="">-Select-</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <img id="photoImage" height="100" width="90" src="@Url.Content(Model.PhotoRelUrl)" class="rounded img-thumbnail" />
+        <div class="form-group">
+            <label asp-for="PhotoUrl" class="control-label"></label>
+            <input asp-for="PhotoUrl" type="hidden" />
+            <input asp-for="PhotoOriginalUrl" type="hidden" />
+        </div>
+        <div class="form-group">
+            <label asp-for="WebUrl" class="control-label"></label>
+            <input asp-for="WebUrl" class="form-control" placeholder="http://" readonly="readonly" />
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="IsDetailUpdated" class="control-label"></label>
+                <input asp-for="IsDetailUpdated" class="form-control" readonly="readonly" />
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="IsActive" class="control-label"></label>
+                <input asp-for="IsActive" class="form-control" readonly="readonly" />
+            </div>
+        </div>
+        <div class="form-row">
+            <input asp-for="CreationDate" type="hidden" />
+            <input asp-for="CreatedBy" type="hidden" />
+            <div class="form-group  col-md-6">
+                <label asp-for="ModifiedBy" class="control-label"></label>
+                <input asp-for="ModifiedBy" class="form-control" readonly="readonly" />
+            </div>
+            <div class="form-group  col-md-6">
+                <label asp-for="ModificationDate" class="control-label"></label>
+                <input asp-for="ModificationDate" class="form-control" readonly="readonly" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 do-not-print">
+        <div class="form-inline">
+            <a asp-action="Index" asp-controller="UserInfo" class="form-control d-inline btn-link">Back to List</a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var referrer = document.referrer;
+        console.log(referrer);
+    });
+
+    //function show(input) {
+    //    if (input.files && input.files[0]) {
+    //        var filerdr = new FileReader();
+    //        filerdr.onload = function (e) {
+    //            $('#photoImage').attr('src', e.target.result);
+    //        }
+    //        filerdr.readAsDataURL(input.files[0]);
+    //    }
+    //}
+</script>

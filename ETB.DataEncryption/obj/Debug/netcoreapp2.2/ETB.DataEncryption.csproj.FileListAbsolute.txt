@@ -1,0 +1,8 @@
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.DataEncryption\bin\Debug\netcoreapp2.2\ETB.DataEncryption.deps.json
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.DataEncryption\bin\Debug\netcoreapp2.2\ETB.DataEncryption.dll
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.DataEncryption\obj\Debug\netcoreapp2.2\ETB.DataEncryption.csproj.CoreCompileInputs.cache
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.DataEncryption\obj\Debug\netcoreapp2.2\ETB.DataEncryption.AssemblyInfoInputs.cache
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.DataEncryption\obj\Debug\netcoreapp2.2\ETB.DataEncryption.AssemblyInfo.cs
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.DataEncryption\bin\Debug\netcoreapp2.2\ETB.DataEncryption.pdb
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.DataEncryption\obj\Debug\netcoreapp2.2\ETB.DataEncryption.dll
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.DataEncryption\obj\Debug\netcoreapp2.2\ETB.DataEncryption.pdb

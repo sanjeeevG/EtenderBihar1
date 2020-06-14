@@ -1,0 +1,20 @@
+﻿@using ETB.WebApp.Utilities
+@using Microsoft.Extensions.Options;
+@inject IOptions<BankDetails> BankDetails
+
+<div class="col-md-6">
+    <div class="h2 mt-2 text-muted">For Payment (Bank Details)</div>
+    <p>Please make the payment for your service to the below mentioned bank through the netbanking.</p>
+    <dl class="row pl-2">
+        <dt class="col-sm-3 mb-0">Account Holder Name: </dt>
+        <dd class="col-sm-9 mb-0">@BankDetails.Value.AccountHolderName</dd>
+        <dt class="col-sm-3 mb-0">Bank Name: </dt>
+        <dd class="col-sm-9 mb-0">@BankDetails.Value.BankName</dd>
+        <dt class="col-sm-3 mb-0">Bank Branch: </dt>
+        <dd class="col-sm-9 mb-0">@BankDetails.Value.BankBranch</dd>
+        <dt class="col-sm-3 mb-0">Account No: </dt>
+        <dd class="col-sm-9 mb-0">@BankDetails.Value.AccountNo</dd>
+        <dt class="col-sm-3 mb-0">IFSC Code: </dt>
+        <dd class="col-sm-9 mb-0">@BankDetails.Value.IfscCode</dd>
+    </dl>
+</div>
