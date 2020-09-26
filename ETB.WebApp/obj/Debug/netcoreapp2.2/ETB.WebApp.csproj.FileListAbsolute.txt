@@ -145,3 +145,4 @@ E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApp\obj\Debug\netcoreapp2.2\R
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApp\obj\Debug\netcoreapp2.2\Razor\Views\Tenders\TenderViewPartial.cshtml.g.cs
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApp\obj\Debug\netcoreapp2.2\Razor\Views\Tenders\View.cshtml.g.cs
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApp\obj\Debug\netcoreapp2.2\Razor\Views\Tenders\_ModelDivision.cshtml.g.cs
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApp\obj\Debug\netcoreapp2.2\Razor\Views\Tenders\_cardData.cshtml.g.cs

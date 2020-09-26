@@ -111,7 +111,7 @@
                         </div>
 
                         <div class="form-inline">
-                            <button class="btn btn-info mr-2" id="btnSevendays" title="Expires in next 7 days"><i class="fa fa-filter"></i><span class="d-none d-sm-inline-block ml-2">Expiring in 7 days</span></button>
+                            <button class="btn btn-info mr-2" id="btnSevendays" title="Expires in next 7 days"><i class="fa fa-filter"></i><span class="d-none d-sm-inline-block ml-2">Expiring in 7 days</span>&nbsp;<span id="lblexp7daysCounts" class="badge badge-light"></span></button>
                             <button class="btn btn-info mr-2" id="btnArchive" title="Archived Tender"><i class="fa fa-filter"></i><span class="d-none d-sm-inline-block ml-2">Archived Tender</span></button>
 
                             <div class="row btn-group btn-group-toggle mr-2" style="margin-left:0px;" data-toggle="buttons" id="dvFilterOptions">
@@ -389,6 +389,7 @@
                             //console.log(result.rcount);
                             $('#lblTotalRecs').text(result.tcount);
                             $('#lblTotalCounts').text(result.rcount);
+                            $('#lblexp7daysCounts').text(result.rcountsendays);
                             }).fail(function (error) {
                                 console.log(error);
                             });
