@@ -1,0 +1,118 @@
+2020-10-17 13:21:12|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/index.html
+2020-10-17 13:21:14||INFO|HTTP GET /swagger/index.html responded 200 in 2521.5924 ms
+2020-10-17 13:21:16|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:21:16|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:21:16|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:21:17|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/swagger/v1/swagger.json
+2020-10-17 13:21:18||INFO|HTTP GET /swagger/v1/swagger.json responded 200 in 852.4043 ms
+2020-10-17 13:21:19|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Price' on entity type 'Service'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-10-17 13:21:19|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'CostOfBOQ' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-10-17 13:21:19|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EMD' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-10-17 13:21:19|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'EstimatedCost' on entity type 'Tender'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-10-17 13:21:19|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceived' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-10-17 13:21:19|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'AmtReceivedDate' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-10-17 13:21:19|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'OriginalAmt' on entity type 'UserService'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-10-17 13:21:19|Microsoft.EntityFrameworkCore.Model.Validation|WARN|No type was specified for the decimal column 'Amount' on entity type 'UserSubscription'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-10-17 13:21:21|Microsoft.EntityFrameworkCore.Query|WARN|Query: '(from Tender x in DbSet<Tender> where (int)[x].IsActive == 1 && [x].BidSubmissionEnDate >= DateTime....' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results.
+2020-10-17 13:21:25||INFO|HTTP GET /api/ATenders responded 200 in 8971.7081 ms
+2020-10-17 13:21:29||INFO|HTTP GET /api/ATenders responded 200 in 13039.7655 ms
+2020-10-17 13:21:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2020-10-17 13:21:29||INFO|HTTP GET /api/ATenders responded 200 in 13191.7573 ms
+2020-10-17 13:21:29||INFO|HTTP GET /api/Districts responded 200 in 325.7074 ms
+2020-10-17 13:23:12|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ValidateCredentials
+2020-10-17 13:23:12||INFO|HTTP POST /api/ValidateCredentials responded 200 in 678.6571 ms
+2020-10-17 13:23:13|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSignInLogs
+2020-10-17 13:23:13|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:23:14||INFO|HTTP POST /api/UserSignInLogs responded 201 in 1428.7366 ms
+2020-10-17 13:23:17||INFO|HTTP GET /api/ATenders responded 200 in 4057.7882 ms
+2020-10-17 13:23:18|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:23:18|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:23:21||INFO|HTTP GET /api/ATenders responded 200 in 3967.0443 ms
+2020-10-17 13:23:22|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2020-10-17 13:23:22||INFO|HTTP GET /api/Districts responded 200 in 530.6375 ms
+2020-10-17 13:23:23||INFO|HTTP GET /api/ATenders responded 200 in 5431.1466 ms
+2020-10-17 13:24:12|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2020-10-17 13:24:13||INFO|HTTP GET /api/Districts responded 200 in 904.5902 ms
+2020-10-17 13:24:13|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ExternalContacts
+2020-10-17 13:24:14|Microsoft.EntityFrameworkCore.Database.Command|EROR|Failed executing DbCommand (322ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[Address], [e].[City], [e].[Class], [e].[ContactNo1], [e].[CreatedBy], [e].[CreationDate], [e].[District], [e].[Email1], [e].[FullName], [e].[Organisation], [e].[PanNo], [e].[Salutation], [e].[Title]
+FROM [ExternalContacts] AS [e]
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'PanNo'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:6b015630-99b4-4954-9db0-201742a4732d
+Error Number:207,State:1,Class:16
+2020-10-17 13:24:14|Microsoft.EntityFrameworkCore.Query|EROR|An exception occurred while iterating over the results of a query for context type 'ETB.WebApi.DataAccess.ETBContext'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'PanNo'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:6b015630-99b4-4954-9db0-201742a4732d
+Error Number:207,State:1,Class:16
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'PanNo'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:6b015630-99b4-4954-9db0-201742a4732d
+Error Number:207,State:1,Class:16
+2020-10-17 13:24:14|ETB.WebApi.Controllers.UserDetailsController|EROR|Invalid column name 'PanNo'.
+2020-10-17 13:24:14||INFO|HTTP GET /api/ExternalContacts responded 400 in 716.4994 ms
+2020-10-17 13:25:28|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:25:32||INFO|HTTP GET /api/ATenders responded 200 in 4037.7118 ms
+2020-10-17 13:25:32|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:25:32|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:25:36||INFO|HTTP GET /api/ATenders responded 200 in 4017.4166 ms
+2020-10-17 13:25:37|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2020-10-17 13:25:37||INFO|HTTP GET /api/Districts responded 200 in 292.8804 ms
+2020-10-17 13:25:37||INFO|HTTP GET /api/ATenders responded 200 in 4952.5929 ms
+2020-10-17 13:26:08|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:26:08|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:26:08|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:26:08||INFO|HTTP GET /api/ATenders responded 200 in 296.5445 ms
+2020-10-17 13:26:12||INFO|HTTP GET /api/ATenders responded 200 in 4416.8491 ms
+2020-10-17 13:26:12|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2020-10-17 13:26:13||INFO|HTTP GET /api/Districts responded 200 in 310.3403 ms
+2020-10-17 13:26:14||INFO|HTTP GET /api/ATenders responded 200 in 5885.3243 ms
+2020-10-17 13:26:23|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ValidateCredentials
+2020-10-17 13:26:24||INFO|HTTP POST /api/ValidateCredentials responded 200 in 295.5745 ms
+2020-10-17 13:26:24|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSignInLogs
+2020-10-17 13:26:24|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:26:25||INFO|HTTP POST /api/UserSignInLogs responded 201 in 872.3398 ms
+2020-10-17 13:26:28||INFO|HTTP GET /api/ATenders responded 200 in 4182.475 ms
+2020-10-17 13:26:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:26:29|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:26:33||INFO|HTTP GET /api/ATenders responded 200 in 4632.6353 ms
+2020-10-17 13:26:33|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/Districts
+2020-10-17 13:26:33||INFO|HTTP GET /api/ATenders responded 200 in 4796.7361 ms
+2020-10-17 13:26:34||INFO|HTTP GET /api/Districts responded 200 in 301.7024 ms
+2020-10-17 13:26:35|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/UserSignInLogs
+2020-10-17 13:26:36|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:26:36|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:26:36|ETB.WebApi.Middleware.RequestAuditingMiddleWare|INFO|/api/ATenders
+2020-10-17 13:26:36||INFO|HTTP POST /api/UserSignInLogs responded 201 in 873.1321 ms
+2020-10-17 13:26:36||INFO|HTTP GET /api/ATenders responded 200 in 333.1274 ms

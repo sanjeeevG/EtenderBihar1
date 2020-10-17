@@ -28,7 +28,6 @@
           "ETB.Utilities": "1.0.0",
           "MSTest.TestFramework": "2.0.0",
           "Microsoft.AspNetCore.App": "2.2.0",
-          "Microsoft.AspNetCore.DataProtection": "2.2.0",
           "Microsoft.AspNetCore.DataProtection.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.DataProtection.Extensions": "2.2.0",
           "Microsoft.AspNetCore.Http": "2.2.2",

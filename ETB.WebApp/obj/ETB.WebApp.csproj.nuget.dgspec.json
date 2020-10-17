@@ -212,10 +212,6 @@
               "version": "[2.2.0, )",
               "autoReferenced": true
             },
-            "Microsoft.AspNetCore.DataProtection": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
             "Microsoft.AspNetCore.DataProtection.Abstractions": {
               "target": "Package",
               "version": "[2.2.0, )"

@@ -2,8 +2,8 @@ E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.Domain\bin\Debug\netcoreapp2.2\E
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.Domain\bin\Debug\netcoreapp2.2\ETB.Core.dll
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.Domain\bin\Debug\netcoreapp2.2\ETB.Core.pdb
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.Domain\obj\Debug\netcoreapp2.2\ETB.Core.csprojAssemblyReference.cache
-E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.Domain\obj\Debug\netcoreapp2.2\ETB.Core.csproj.CoreCompileInputs.cache
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.Domain\obj\Debug\netcoreapp2.2\ETB.Core.AssemblyInfoInputs.cache
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.Domain\obj\Debug\netcoreapp2.2\ETB.Core.AssemblyInfo.cs
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.Domain\obj\Debug\netcoreapp2.2\ETB.Core.csproj.CoreCompileInputs.cache
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.Domain\obj\Debug\netcoreapp2.2\ETB.Core.dll
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.Domain\obj\Debug\netcoreapp2.2\ETB.Core.pdb

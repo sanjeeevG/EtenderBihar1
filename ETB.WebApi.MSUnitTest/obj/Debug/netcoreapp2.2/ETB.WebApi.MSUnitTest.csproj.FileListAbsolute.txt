@@ -7,9 +7,9 @@ E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\bin\Debug\netc
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\bin\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.dll
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\bin\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.pdb
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\obj\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.csprojAssemblyReference.cache
-E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\obj\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.csproj.CoreCompileInputs.cache
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\obj\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.AssemblyInfoInputs.cache
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\obj\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.AssemblyInfo.cs
+E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\obj\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.csproj.CoreCompileInputs.cache
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\obj\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.dll
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\obj\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.pdb
 E:\Sanjeev\EtenderBihar\Source\EtenderBihar\ETB.WebApi.MSUnitTest\obj\Debug\netcoreapp2.2\ETB.WebApi.MSUnitTest.genruntimeconfig.cache

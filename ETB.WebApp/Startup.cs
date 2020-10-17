@@ -24,6 +24,7 @@ using Microsoft.AspNetCore.Authentication;
 using ETB.Utilities.SMS;
 using Microsoft.AspNetCore.Identity;
 
+
 namespace ETB.WebApp
 {
     public class Startup
@@ -60,11 +61,18 @@ namespace ETB.WebApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            //services.Configure<SecurityStampValidatorOptions>(options =>
-            //options.ValidationInterval = TimeSpan.FromHours(8));
 
-            //services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-            //        .AddCookie();
+            //services.AddMvc().AddSessionStateTempDataProvider();
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddSessionStateTempDataProvider();
+
+            services.AddSession(s =>
+            {
+                s.IdleTimeout = TimeSpan.FromMinutes(20);
+                //s.Cookie.IsEssential = true;
+            });
+
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                     .AddCookie(option =>
                     {
@@ -76,24 +84,6 @@ namespace ETB.WebApp
                     });
 
 
-
-            //services.ConfigureApplicationCookie(options =>
-            //{
-            //    // Cookie settings, only this changes expiration
-            //    options.Cookie.Expiration = TimeSpan.FromHours(8);
-            //    options.ExpireTimeSpan = TimeSpan.FromHours(8);
-            //    options.SlidingExpiration = true;
-            //});
-
-
-            services.AddSession(s =>
-            {
-                s.IdleTimeout = TimeSpan.FromMinutes(20);
-                s.Cookie.IsEssential = true;
-            });
-
-
-            services.AddMvc().AddSessionStateTempDataProvider();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddDataProtection();
             services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
@@ -120,7 +110,7 @@ namespace ETB.WebApp
                 new PhysicalFileProvider(
                     Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", Configuration.GetSection("ApplicationSettings:NitFilePath").Value)));
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -159,7 +149,12 @@ namespace ETB.WebApp
                 SupportedUICultures = supportedCultures
             });
 
-            app.UseCookiePolicy();
+            var cookiePolicyOptions = new CookiePolicyOptions
+            {
+                MinimumSameSitePolicy = SameSiteMode.Strict,
+            };
+
+            app.UseCookiePolicy(cookiePolicyOptions);
             app.UseSession();
             app.UseStaticFiles();
             app.UseAuthentication();

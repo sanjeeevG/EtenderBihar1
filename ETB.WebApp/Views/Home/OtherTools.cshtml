@@ -2,7 +2,12 @@
 @{
     Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
 }
-<h2>@Subtitle.OtherTools</h2>
+<div class="form-row">
+    <h2 class="col-md-10">@Subtitle.OtherTools</h2>
+    <div class="col-md-2">
+        <a asp-action="Index2" asp-controller="Tenders" class="form-control d-inline btn-link">Back to List</a>
+    </div>
+</div>
 <hr />
 <div class="row bg-light">
     <div class="col-md-12 bg-white  box-shadow mb-3 ">
