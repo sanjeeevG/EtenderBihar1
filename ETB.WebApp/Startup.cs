@@ -67,6 +67,12 @@ namespace ETB.WebApp
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddSessionStateTempDataProvider();
 
+            services.AddHttpsRedirection(options =>
+            {
+                options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
+                options.HttpsPort = 443;
+            });
+
             services.AddSession(s =>
             {
                 s.IdleTimeout = TimeSpan.FromMinutes(20);
@@ -154,12 +160,12 @@ namespace ETB.WebApp
                 MinimumSameSitePolicy = SameSiteMode.Strict,
             };
 
+            
             app.UseCookiePolicy(cookiePolicyOptions);
             app.UseSession();
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseAuthentication();
-            app.UseHttpsRedirection();
-
 
             app.UseMvc(routes =>
             {
